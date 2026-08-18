@@ -83,7 +83,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "le-temple",
-    image: "/work/le-temple.png",
+    image: "/work/le-temple.jpg",
     year: "",
     client: "Le Temple",
     gallery: [],

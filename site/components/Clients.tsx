@@ -45,21 +45,35 @@ export default function Clients({ dict, lang }: { dict: Dictionary; lang: Locale
               aria-hidden={pass === 1}
               className="flex shrink-0 items-center gap-16 pr-16 md:gap-24 md:pr-24"
             >
+              {/* Boite de taille fixe + `fill` : sans dimension intrinseque
+                  tant que l'image n'est pas chargee, la cellule s'effondrerait
+                  a zero et la bande sauterait.
+                  C'est le `li` lui-meme qui porte la boite : le conteneur
+                  intermediaire ne servait qu'a ancrer le `fill`, or un `li` en
+                  `relative` l'ancre aussi bien. Vingt-deux elements de moins
+                  sur la page, la bande etant doublee pour boucler. */}
               {CLIENTS.map((client) => (
-                <li key={`${pass}-${client.name}`} className="shrink-0">
-                  {/* Boite de taille fixe + `fill` : sans dimension intrinseque
-                      tant que l'image n'est pas chargee, la cellule
-                      s'effondrerait a zero et la bande sauterait. */}
-                  <div className="relative h-[32px] w-[110px] md:h-[38px] md:w-[130px]">
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      fill
-                      sizes="130px"
-                      style={{ transform: `scale(${client.scale})` }}
-                      className="object-contain opacity-50 grayscale transition-all duration-500 ease-expo hover:opacity-100 hover:grayscale-0"
-                    />
-                  </div>
+                <li
+                  key={`${pass}-${client.name}`}
+                  className="relative h-[32px] w-[110px] shrink-0 md:h-[38px] md:w-[130px]"
+                >
+                  {/* `unoptimized` : les sources sont des PNG a plat de moins
+                      de 10 Ko, deja calibres sur la boite d'affichage. Passer
+                      par l'optimiseur les rend souvent PLUS lourds — l'AVIF
+                      est fait pour la photographie, pas pour des aplats a
+                      bords nets — pour un total mesure de 50,6 Ko contre
+                      47,7 Ko en direct. A octets egaux, autant supprimer onze
+                      encodages serveur et onze dependances au cache d'images
+                      sur une bande qui s'affiche des la premiere section. */}
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    fill
+                    unoptimized
+                    sizes="130px"
+                    style={{ transform: `scale(${client.scale})` }}
+                    className="object-contain opacity-50 grayscale transition-all duration-500 ease-expo hover:opacity-100 hover:grayscale-0"
+                  />
                 </li>
               ))}
             </ul>

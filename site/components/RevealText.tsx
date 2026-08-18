@@ -21,6 +21,12 @@ type RevealTextProps = {
  * Le decoupage se fait au mot, pas a la ligne : aucune mesure au montage, et
  * l'effet survit a n'importe quel retour a la ligne. Le texte complet reste
  * expose via aria-label, les fragments sont masques aux lecteurs d'ecran.
+ *
+ * Deux elements par mot, pas trois : le masque et le mobile. L'espace qui
+ * separe deux mots est un simple noeud de texte pose entre les masques — il
+ * n'a jamais eu besoin d'un element pour exister, il avait seulement besoin de
+ * rester HORS du masque, ou un `inline-flex` l'aurait supprime et aurait colle
+ * les mots entre eux.
  */
 export default function RevealText({
   text,
@@ -43,23 +49,23 @@ export default function RevealText({
         <span key={lineIndex} className="block">
           {line.split(" ").map((word, i, words) => {
             wordIndex += 1;
-            return (
-              <span key={`${lineIndex}-${i}`} aria-hidden>
-                <span className="inline-flex overflow-hidden align-bottom">
-                  <span
-                    style={{ transitionDelay: `${delay + wordIndex * stagger}ms` }}
-                    className={`inline-block transition-transform duration-[900ms] ease-expo ${
-                      visible ? "translate-y-0" : "translate-y-[110%]"
-                    }`}
-                  >
-                    {word}
-                  </span>
+            return [
+              <span
+                key={`${lineIndex}-${i}`}
+                aria-hidden
+                className="inline-flex overflow-hidden align-bottom"
+              >
+                <span
+                  style={{ transitionDelay: `${delay + wordIndex * stagger}ms` }}
+                  className={`inline-block transition-transform duration-[900ms] ease-expo ${
+                    visible ? "translate-y-0" : "translate-y-[110%]"
+                  }`}
+                >
+                  {word}
                 </span>
-                {/* L'espace vit hors du masque : dans un inline-flex il serait
-                    supprime et les mots se colleraient. */}
-                {i < words.length - 1 ? " " : null}
-              </span>
-            );
+              </span>,
+              i < words.length - 1 ? " " : null,
+            ];
           })}
         </span>
       ))}

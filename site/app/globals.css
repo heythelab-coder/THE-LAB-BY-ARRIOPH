@@ -244,6 +244,24 @@
   .link-sweep:hover {
     background-size: 100% 1px;
   }
+
+  /* Remplissage de texte au scroll (voir ScrollText).
+     Chaque caractere calcule son opacite a partir de son rang `--i` et de la
+     position du front `--head`, ecrite une seule fois par frame sur le
+     conteneur. Le scroll ne touche donc qu'une propriete, quel que soit le
+     nombre de caracteres.
+     `--head` est declare ici plutot qu'en style inline : avant que le
+     JavaScript ne s'execute, le texte s'affiche deja a son opacite de depart
+     au lieu d'un `opacity` invalide. */
+  .scroll-fill {
+    --head: 0;
+  }
+
+  .scroll-fill > span {
+    opacity: calc(
+      var(--from) + (1 - var(--from)) * clamp(0, (var(--head) - var(--i)) / var(--feather), 1)
+    );
+  }
 }
 
 @layer utilities {

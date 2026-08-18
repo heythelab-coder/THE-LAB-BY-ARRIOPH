@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type ElementType } from "react";
+import { useEffect, useRef, type CSSProperties, type ElementType } from "react";
 
 type ScrollTextProps = {
   text: string;
@@ -21,9 +21,21 @@ type ScrollTextProps = {
  * Les spans restent en `display: inline`, donc la coupure des lignes se fait
  * normalement aux espaces.
  *
- * Seule l'opacite est animee — pas de layout, pas de peinture de geometrie —
- * et l'ecriture des styles passe par requestAnimationFrame pour ne jamais
- * lire la geometrie pendant l'evenement de scroll.
+ * Deux choix pour que ce decoupage ne se paie pas au prix fort :
+ *
+ * 1. Les espaces ne recoivent pas d'element. Animer l'opacite d'un blanc n'a
+ *    aucun effet visible, et sur une citation un caractere sur six est un
+ *    espace. Ils restent des noeuds de texte, donc la coupure des lignes est
+ *    inchangee.
+ *
+ * 2. Le scroll n'ecrit qu'UNE propriete, sur le conteneur. Chaque caractere
+ *    porte son rang en `--i` et calcule lui-meme son opacite en CSS. La
+ *    version precedente ecrivait un style inline par caractere a chaque frame,
+ *    soit plus de cent cinquante ecritures repetees soixante fois par seconde
+ *    pour une seule citation ; c'est desormais une.
+ *
+ * Si un navigateur ne sait pas resoudre le calcul, `opacity` redevient 1 et le
+ * texte s'affiche en plein — l'echec laisse le contenu lisible.
  */
 export default function ScrollText({
   text,
@@ -33,16 +45,19 @@ export default function ScrollText({
   feather = 6,
 }: ScrollTextProps) {
   const ref = useRef<HTMLElement | null>(null);
-  const charsRef = useRef<HTMLSpanElement[]>([]);
+  // Le rang court sur TOUS les caracteres, espaces compris : le front doit
+  // avancer a vitesse constante dans la phrase, pas accelerer aux espaces.
+  const length = text.length;
 
   useEffect(() => {
     const node = ref.current;
-    const chars = charsRef.current;
-    if (!node || chars.length === 0) return;
+    if (!node) return;
+
+    const setHead = (value: number) => node.style.setProperty("--head", String(value));
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reduced.matches) {
-      chars.forEach((c) => c && (c.style.opacity = "1"));
+      setHead(length + feather);
       return;
     }
 
@@ -60,14 +75,7 @@ export default function ScrollText({
       const progress = (start - rect.top) / Math.max(1, start - end + rect.height * 0.4);
       const clamped = Math.max(0, Math.min(1, progress));
 
-      const head = clamped * (chars.length + feather);
-
-      for (let i = 0; i < chars.length; i += 1) {
-        const char = chars[i];
-        if (!char) continue;
-        const local = Math.max(0, Math.min(1, (head - i) / feather));
-        char.style.opacity = String(from + (1 - from) * local);
-      }
+      setHead(clamped * (length + feather));
     };
 
     const onScroll = () => {
@@ -92,24 +100,24 @@ export default function ScrollText({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [from, feather]);
-
-  charsRef.current = [];
+  }, [from, feather, length]);
 
   return (
-    <Tag ref={ref} aria-label={text} className={className}>
-      {text.split("").map((char, i) => (
-        <span
-          key={i}
-          aria-hidden
-          ref={(el: HTMLSpanElement | null) => {
-            if (el) charsRef.current[i] = el;
-          }}
-          style={{ opacity: from }}
-        >
-          {char}
-        </span>
-      ))}
+    <Tag
+      ref={ref}
+      aria-label={text}
+      className={`scroll-fill ${className}`}
+      style={{ "--from": from, "--feather": feather } as CSSProperties}
+    >
+      {[...text].map((char, i) =>
+        char === " " ? (
+          " "
+        ) : (
+          <span key={i} aria-hidden style={{ "--i": i } as CSSProperties}>
+            {char}
+          </span>
+        ),
+      )}
     </Tag>
   );
 }

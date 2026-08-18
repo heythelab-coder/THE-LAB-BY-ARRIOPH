@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useInView } from "@/lib/useInView";
 
 type VideoPanelProps = {
   src: string;
@@ -21,13 +22,29 @@ type VideoPanelProps = {
  * (video en cache, onglet en arriere-plan qui gele les transitions CSS...).
  * Le fond sombre du conteneur joue le role de vignette le temps que la
  * premiere image arrive.
+ *
+ * La SOURCE, elle, n'est attachee qu'a l'approche de l'ecran. Avec un `src`
+ * pose des le rendu et `preload="auto"`, le fichier — un megaoctet ici — part
+ * en telechargement pendant que le hero se peint encore, sur la meme connexion
+ * et souvent avant l'image qui decide du LCP. La video est en deuxieme
+ * section : rien ne justifie qu'elle parte en premier.
+ *
+ * `useInView` est reutilise tel quel pour ses filets : si l'observateur ne
+ * repond pas (onglet en arriere-plan, transition de page), une mesure de
+ * position differee prend le relais. Une detection ratee ici ne coute qu'une
+ * video qui demarre tard, jamais un panneau vide — le fond sombre tient le
+ * cadre dans tous les cas.
  */
 export default function VideoPanel({ src, poster, className = "" }: VideoPanelProps) {
   const ref = useRef<HTMLVideoElement | null>(null);
+  // Marge large : on veut le fichier pret AVANT que la section arrive, pas au
+  // moment ou elle arrive. Le gain vise est l'ordre de chargement, pas
+  // l'economie d'un fichier que le visiteur va de toute facon voir.
+  const near = useInView(ref, { threshold: 0, rootMargin: "400px 0px 400px 0px" });
 
   useEffect(() => {
     const video = ref.current;
-    if (!video) return;
+    if (!video || !near) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reduced.matches) return;
@@ -43,12 +60,12 @@ export default function VideoPanel({ src, poster, className = "" }: VideoPanelPr
     if (video.readyState >= 2) tryPlay();
     video.addEventListener("canplay", tryPlay);
     return () => video.removeEventListener("canplay", tryPlay);
-  }, []);
+  }, [near]);
 
   return (
     <video
       ref={ref}
-      src={src}
+      src={near ? src : undefined}
       poster={poster}
       aria-hidden
       tabIndex={-1}
@@ -56,7 +73,7 @@ export default function VideoPanel({ src, poster, className = "" }: VideoPanelPr
       loop
       playsInline
       autoPlay
-      preload="auto"
+      preload={near ? "auto" : "none"}
       className={`h-full w-full object-cover ${className}`}
     />
   );
