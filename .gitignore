@@ -1,0 +1,9 @@
+# Fichiers d'affichage Finder : aucune valeur pour le projet, et source de
+# conflits des qu'une deuxieme personne travaille sur le depot.
+.DS_Store
+
+# Originaux haute definition conserves avant compression (visuel de marque,
+# photographies sources). Ils restent sur le disque mais ne sont pas versionnes :
+# git conserve chaque version binaire indefiniment, et ces fichiers ne sont
+# jamais servis par le site.
+brand-source/
