@@ -1,0 +1,447 @@
+@import url("https://api.fontshare.com/v2/css?f[]=sentient@400,401,500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ---------- Thèmes ----------
+     Les couleurs vivent ici, en triplets RGB bruts pour que Tailwind puisse
+     leur appliquer une opacité (`text-paper/60`). Basculer le thème revient à
+     redéfinir deux triplets sur <html> : aucune classe conditionnelle nulle
+     part dans les composants.
+
+     `--bg` et `--fg` s'échangent d'un thème à l'autre. C'est ce qui fait qu'un
+     bouton `bg-paper text-ink` reste correctement inversé dans les deux sens
+     sans traitement particulier. */
+  :root,
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --bg: 0 0 0;
+    --fg: 255 255 255;
+    --accent: 169 166 245;
+    /* Surface « surelevee » : la pilule de nav. En sombre elle est plus claire
+       que la page, en clair plus foncee — dans les deux cas elle se detache. */
+    --elev: 44 44 49;
+    /* Hauteur de la nav en pilule + marge : sert d'offset aux ancres. */
+    --nav-offset: 110px;
+  }
+
+  [data-theme="light"] {
+    color-scheme: light;
+    /* Ni blanc pur ni noir pur : le contraste maximal fatigue en lecture
+       longue, et le noir pur sur blanc pur fait vibrer les empattements
+       de la Sentient. */
+    --bg: 250 250 249;
+    --fg: 12 12 14;
+    --accent: 79 70 210;
+    --elev: 255 255 255;
+  }
+
+  /* Les blocs où du texte se pose sur une image ou un dégradé restent sombres
+     dans les deux thèmes : en clair, le voile deviendrait blanc et le texte
+     blanc disparaîtrait. La lisibilité prime sur la cohérence chromatique. */
+  .on-media {
+    color-scheme: dark;
+    --bg: 0 0 0;
+    --fg: 255 255 255;
+    /* Redéclarer `color` est indispensable : l'héritage CSS transmet la couleur
+       CALCULÉE au niveau du body, pas la référence à `--fg`. Sans cette ligne,
+       les variables changent bien dans le bloc mais le texte garde la couleur
+       héritée du thème de la page — titre noir sur photo sombre en thème clair. */
+    color: rgb(var(--fg));
+  }
+
+  html {
+    background-color: rgb(var(--bg));
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Fond transparent, volontairement : la couleur est portee par <html>.
+       Un fond opaque sur le body masque tout element en z-index negatif —
+       c'est ce qui rendait la nappe d'ambiance invisible. */
+    @apply bg-transparent text-paper font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    /* La bascule de thème se fait en fondu plutôt qu'en coupure sèche. */
+    transition: background-color 400ms ease, color 400ms ease;
+  }
+
+  ::selection {
+    @apply bg-paper text-ink;
+  }
+
+  /* Les ancres ne doivent pas passer sous la nav fixe. */
+  [id] {
+    scroll-margin-top: var(--nav-offset);
+  }
+
+  /* Anneau de focus visible au clavier uniquement, jamais à la souris. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-paper/90 ring-offset-2 ring-offset-ink;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* ---- Grille ---- */
+  .container-lab {
+    @apply mx-auto w-full max-w-[1440px] px-5 md:px-8;
+  }
+
+  /* Rythme vertical : 64px de padding => 128px entre deux sections. */
+  .section {
+    @apply py-16;
+  }
+
+  /* ---- Échelle typographique ----
+     Interlignes serrés (1.1–1.2) sur les titres et le texte d'interface,
+     comme la référence. En revanche les paragraphes réels utilisent `.t-prose` :
+     du texte courant à 1.2 est illisible, surtout en français. */
+  .t-h1 {
+    @apply font-serif font-normal;
+    font-size: clamp(2.5rem, 5.2vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  /* Titres de section. La reference tient tout entre 12px et 32px : un rapport
+     de 2.6 qui aplatit la page. On monte les titres de section a l'echelle
+     display pour creer une vraie amplitude (12px -> 64px, rapport 5.3). C'est
+     ce contraste qui fait lire une page comme composee plutot que remplie. */
+  .t-display {
+    @apply font-serif font-normal;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .t-h2 {
+    @apply font-sans font-normal;
+    font-size: clamp(1.75rem, 2.6vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .t-h3 {
+    @apply font-sans font-normal;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .t-quote {
+    @apply font-serif font-normal;
+    font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .t-cta {
+    @apply font-serif font-normal;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .t-lead {
+    @apply font-sans font-normal;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+  }
+
+  /* Texte d'interface : liens de nav, libellés, ligne unique. */
+  .t-body {
+    @apply font-sans font-normal;
+    font-size: 1rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  /* Paragraphes de lecture : interligne confortable. */
+  .t-prose {
+    @apply font-sans font-normal;
+    font-size: 1rem;
+    line-height: 1.55;
+    letter-spacing: -0.011em;
+    text-wrap: pretty;
+  }
+
+  .t-meta {
+    @apply font-sans font-normal;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[12px] font-medium uppercase tracking-[0.1em] text-paper/60;
+  }
+
+  /* ---- Boutons ---- */
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-3 text-[16px] font-medium
+           tracking-[-0.02em] transition-all duration-300 ease-out;
+  }
+
+  .btn-solid {
+    @apply btn bg-paper text-ink hover:bg-paper/85 active:scale-[0.98];
+  }
+
+  /* Fond assez opaque pour rester lisible par-dessus les zones claires du dégradé. */
+  .btn-ghost {
+    @apply btn border border-paper/25 bg-ink/25 text-paper backdrop-blur-md
+           hover:border-paper/40 hover:bg-ink/40 active:scale-[0.98];
+  }
+
+  .hairline {
+    @apply border-t border-line;
+  }
+
+  /* Champs de formulaire : soulignes plutot qu'encadres, pour rester dans le
+     vocabulaire de filets du reste du site. */
+  .input-lab {
+    @apply w-full border-b border-line bg-transparent pb-3 pt-1 text-[16px]
+           tracking-[-0.02em] text-paper transition-colors duration-300
+           placeholder:text-paper/30 hover:border-paper/30 focus:border-paper focus:outline-none;
+  }
+
+  /* Les listes deroulantes heritent du fond de la page sur certains systemes :
+     on force un fond sombre, sinon les options sont blanc sur blanc. */
+  .input-lab option {
+    @apply bg-ink text-paper;
+  }
+
+  textarea.input-lab {
+    @apply border border-line px-4 py-3;
+  }
+
+  /* Les millesimes et compteurs doivent s'aligner en colonne :
+     chiffres a chasse fixe, sinon le « 1 » creuse un trou dans la grille. */
+  .nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Soulignement qui se deploie depuis la gauche au survol du parent .group. */
+  .link-sweep {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 0% 1px;
+    padding-bottom: 2px;
+    transition: background-size 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .group:hover .link-sweep,
+  .link-sweep:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@layer utilities {
+  /* ---------- Nappe d'ambiance ----------
+     Trois masses colorees qui derivent lentement, chacune a sa propre vitesse.
+     Des vitesses differentes evitent que l'ensemble ne semble bouger d'un bloc :
+     c'est le decalage entre les trois qui fabrique la profondeur.
+
+     La teinte de base vient du scroll (voir components/Ambient), les deux
+     autres masses s'en decalent d'un ecart fixe pour rester dans la meme
+     famille chromatique sans etre identiques. */
+  .ambient-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    will-change: transform;
+  }
+
+  .ambient-a {
+    inset: -20% 30% 40% -20%;
+    background: radial-gradient(circle, hsl(var(--ambient-hue) 85% 55%) 0%, transparent 68%);
+    animation: ambient-drift-a 34s ease-in-out infinite;
+  }
+
+  .ambient-b {
+    inset: 10% -25% -25% 35%;
+    background: radial-gradient(circle, hsl(calc(var(--ambient-hue) + 26) 80% 58%) 0%, transparent 68%);
+    animation: ambient-drift-b 46s ease-in-out infinite;
+  }
+
+  .ambient-c {
+    inset: 35% 15% -30% 10%;
+    background: radial-gradient(circle, hsl(calc(var(--ambient-hue) - 22) 75% 50%) 0%, transparent 70%);
+    animation: ambient-drift-c 58s ease-in-out infinite;
+  }
+
+  @keyframes ambient-drift-a {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(12%, 8%, 0) scale(1.18); }
+  }
+
+  @keyframes ambient-drift-b {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1.1); }
+    50% { transform: translate3d(-14%, -10%, 0) scale(0.92); }
+  }
+
+  @keyframes ambient-drift-c {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(0.95); }
+    50% { transform: translate3d(8%, -12%, 0) scale(1.15); }
+  }
+
+  /* Le flou de 90px sur trois masses coute cher sur mobile : on les fige
+     sans les supprimer, la couleur reste, le mouvement part. */
+  @media (max-width: 767px) {
+    .ambient-blob {
+      animation: none !important;
+      filter: blur(60px);
+    }
+  }
+
+  .mesh {
+    background-color: #8f8ede;
+    background-image:
+      radial-gradient(58% 52% at 18% 22%, rgba(122, 150, 246, 0.95) 0%, rgba(122, 150, 246, 0) 66%),
+      radial-gradient(52% 48% at 80% 18%, rgba(216, 170, 238, 0.9) 0%, rgba(216, 170, 238, 0) 64%),
+      radial-gradient(62% 58% at 66% 76%, rgba(238, 156, 196, 0.85) 0%, rgba(238, 156, 196, 0) 62%),
+      radial-gradient(66% 62% at 10% 82%, rgba(96, 116, 226, 0.95) 0%, rgba(96, 116, 226, 0) 64%),
+      radial-gradient(45% 40% at 45% 50%, rgba(196, 172, 240, 0.7) 0%, rgba(196, 172, 240, 0) 70%);
+    filter: blur(56px) saturate(135%);
+    /* Le dégradé est promu sur sa propre couche : le flou n'est rastérisé
+       qu'une fois, l'animation ne fait ensuite que composer. */
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- Fondu des bords de media ----------
+     Plutot que de poser un degrade PAR-DESSUS l'image, on decoupe le media
+     lui-meme avec un masque. La difference est essentielle : un degrade ajoute
+     une couleur opaque qui coupe la nappe d'ambiance courant derriere tout le
+     site, ce qui produit justement la ligne franche qu'on cherche a supprimer.
+     Un masque, lui, rend le media reellement transparent — l'ambiance
+     traverse, et il n'y a plus de raccord a cacher.
+
+     Bonus : ca fonctionne dans les deux themes sans condition, puisqu'aucune
+     couleur n'est introduite. */
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 52%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 52%, transparent 100%);
+  }
+
+  /* Deux masques combines en intersection : le media se fond sur son bord
+     interieur (celui qui touche le texte) ET vers le bas. Les bords qui
+     debordent hors de l'ecran restent nets — inutile de fondre ce qu'on ne
+     voit pas. */
+  .mask-fade-inset {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%),
+      linear-gradient(to bottom, #000 58%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent 0%, #000 22%),
+      linear-gradient(to bottom, #000 58%, transparent 100%);
+    mask-composite: intersect;
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  /* Coupe le défilement d'arrière-plan quand le menu mobile est ouvert. */
+  .scroll-locked {
+    overflow: hidden;
+  }
+}
+
+/* ---------- Transitions de page ----------
+   Next enveloppe les navigations du routeur dans document.startViewTransition
+   (voir experimental.viewTransition). On remplace le fondu croisé par défaut :
+   l'ancienne page recule et s'assombrit, la nouvelle se dévoile du bas vers le
+   haut. Le recul de l'ancienne donne la profondeur — sans lui, le dévoilement
+   ressemble à un simple volet.
+
+   Les navigateurs sans View Transitions font une navigation instantanée
+   classique : c'est une amélioration progressive, rien ne casse. */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: 420ms cubic-bezier(0.4, 0, 1, 1) both vt-out;
+  }
+
+  ::view-transition-new(root) {
+    animation: 760ms cubic-bezier(0.16, 1, 0.3, 1) both vt-in;
+  }
+}
+
+@keyframes vt-out {
+  to {
+    transform: scale(0.96);
+    filter: brightness(0.35);
+  }
+}
+
+@keyframes vt-in {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* La nav est identique d'une page à l'autre : on la sort du cliché racine pour
+   qu'elle reste fixe pendant la transition au lieu d'être emportée par le volet. */
+.vt-nav {
+  view-transition-name: nav;
+}
+
+/* ---------- Curseur personnalisé ----------
+   Le curseur natif est masqué seulement quand le curseur maison est réellement
+   monté (souris + pas de prefers-reduced-motion). Les champs de saisie gardent
+   le leur : sans le curseur en I, on ne sait plus où l'on écrit. */
+html[data-cursor="custom"],
+html[data-cursor="custom"] * {
+  cursor: none;
+}
+
+html[data-cursor="custom"] input,
+html[data-cursor="custom"] textarea,
+html[data-cursor="custom"] select {
+  cursor: auto;
+}
+
+/* Le flou animé coûte cher sur mobile : on garde le dégradé, on coupe le mouvement. */
+@media (max-width: 767px) {
+  .mesh {
+    animation: none !important;
+    filter: blur(40px) saturate(130%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
