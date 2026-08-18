@@ -3,7 +3,6 @@ import PageHeader from "@/components/PageHeader";
 import Approach from "@/components/Approach";
 import Clients from "@/components/Clients";
 import Process from "@/components/Process";
-import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
 import Cta from "@/components/Cta";
 import { getDictionary, locales, resolveLocale } from "@/content/dictionary";
@@ -41,7 +40,6 @@ export default async function StudioPage({ params }: { params: Promise<{ lang: s
       <Approach dict={dict} />
       <Process dict={dict} />
       <Clients dict={dict} lang={locale} />
-      <Testimonials dict={dict} />
       <Faq dict={dict} />
       <Cta dict={dict} />
     </>

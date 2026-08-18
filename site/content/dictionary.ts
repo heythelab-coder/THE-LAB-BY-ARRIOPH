@@ -232,21 +232,7 @@ export const en: Dictionary = {
       },
     ],
   },
-  // TODO — Replace with real client quotes before going live. The names below
-  // come from the original template and correspond to no one. Possible real
-  // sources: Le Temple, Wydad AC, Red Bull Morocco, Sneaks Plus, Beyond Fears.
-  testimonials: {
-    eyebrow: "WHAT CLIENTS SAY",
-    title: "Testimonials",
-    items: [
-      { quote: "They turned a vague idea into a brand that finally feels like us.", name: "Mara L.", role: "Founder" },
-      { quote: "Every detail was considered. The work didn't just look good, it performed.", name: "Daniel O.", role: "Head of Growth" },
-      { quote: "More a partner than a vendor. You can see the difference in the work.", name: "Sofia B.", role: "CMO" },
-      { quote: "They raised the bar for what we thought our product could be.", name: "Aiko T.", role: "Product Lead" },
-      { quote: "The kind of craft that quietly makes competitors nervous.", name: "Elias B.", role: "Director" },
-      { quote: "Sharp strategy, beautiful execution, zero drama. A rare combination.", name: "Tomas V.", role: "CEO" },
-    ],
-  },
+  // Testimonials removed
   faq: {
     eyebrow: "FREQUENTLY ASKED",
     title: "FAQ",
