@@ -4,7 +4,7 @@ import Approach from "@/components/Approach";
 import Clients from "@/components/Clients";
 import Process from "@/components/Process";
 import Faq from "@/components/Faq";
-import Cta from "@/components/Cta";
+import ClosingCta from "@/components/ClosingCta";
 import { getDictionary, locales, resolveLocale } from "@/content/dictionary";
 import { getPages } from "@/content/pages";
 
@@ -41,7 +41,7 @@ export default async function StudioPage({ params }: { params: Promise<{ lang: s
       <Process dict={dict} />
       <Clients dict={dict} lang={locale} />
       <Faq dict={dict} />
-      <Cta dict={dict} />
+      <ClosingCta dict={dict} locale={locale} />
     </>
   );
 }

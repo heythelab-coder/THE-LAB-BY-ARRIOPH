@@ -5,7 +5,6 @@ import Reveal from "@/components/Reveal";
 import RevealText from "@/components/RevealText";
 import ActionLink from "@/components/ActionLink";
 import Process from "@/components/Process";
-import Cta from "@/components/Cta";
 import { SERVICES } from "@/content/services";
 import { getDictionary, locales, resolveLocale } from "@/content/dictionary";
 import { getPages } from "@/content/pages";
@@ -81,9 +80,14 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <Process dict={dict} />
+      <Process dict={dict} title={copy.processTitle} />
 
-      <section className="section container-lab">
+      {/* Cette section porte desormais l'ancre `contact` et le chapitre : elle
+          etait suivie d'un second appel a l'action, retire ici, qui les
+          portait. Sans ce report, tout lien vers `#contact` depuis cette page
+          ne menerait plus nulle part et le rail de chapitres perdrait sa
+          derniere etape. */}
+      <section id="contact" data-chapter={dict.chapters.contact} className="section container-lab">
         <Reveal className="flex flex-col items-start gap-6 border-t border-line pt-10 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="t-h2 max-w-[24ch]">{copy.ctaTitle}</h2>
@@ -92,8 +96,6 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
           <ActionLink href={`/${locale}/contact`} label={dict.cta.button} withArrow />
         </Reveal>
       </section>
-
-      <Cta dict={dict} />
     </>
   );
 }

@@ -35,6 +35,10 @@ export const pagesFr = {
       "Exécution d'un plan déjà écrit ailleurs",
       "SEO de volume et netlinking",
     ],
+    // Titre du bloc protocole sur CETTE page uniquement. Le dictionnaire
+    // l'appelle « Services », ce qui convient partout ailleurs mais repete ici
+    // le nom de la page qu'on est en train de lire.
+    processTitle: "Comment on travaille.",
     ctaTitle: "Vous ne savez pas dans quelle case vous êtes ?",
     ctaBody: "C'est le cas le plus fréquent. Une séance d'écoute suffit à le savoir.",
   },
@@ -162,6 +166,10 @@ export const pagesEn: PagesCopy = {
       "Executing a plan written elsewhere",
       "Volume SEO and link building",
     ],
+    // Titre du bloc protocole sur CETTE page uniquement. Le dictionnaire
+    // l'appelle « Services », ce qui convient partout ailleurs mais repete ici
+    // le nom de la page qu'on est en train de lire.
+    processTitle: "How we work.",
     ctaTitle: "Not sure which box you're in?",
     ctaBody: "That's the most common case. One listening session is enough to find out.",
   },

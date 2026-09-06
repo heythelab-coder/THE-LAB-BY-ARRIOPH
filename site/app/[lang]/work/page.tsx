@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import WorkIndex from "@/components/WorkIndex";
-import Cta from "@/components/Cta";
+import ClosingCta from "@/components/ClosingCta";
 import { PROJECTS } from "@/content/projects";
 import { getDictionary, locales, resolveLocale } from "@/content/dictionary";
 import { getPages } from "@/content/pages";
@@ -44,7 +44,7 @@ export default async function WorkPage({ params }: { params: Promise<{ lang: str
         <WorkIndex locale={locale} allLabel={dict.work.allFilter} viewLabel={dict.work.view} />
       </section>
 
-      <Cta dict={dict} />
+      <ClosingCta dict={dict} locale={locale} />
     </>
   );
 }

@@ -232,7 +232,6 @@ export const en: Dictionary = {
       },
     ],
   },
-  // Testimonials removed
   faq: {
     eyebrow: "FREQUENTLY ASKED",
     title: "FAQ",

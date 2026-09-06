@@ -33,7 +33,25 @@ const STEP_IMAGES = [
  * Le survol n'existe pas au doigt : sous md, chaque ligne affiche une vignette
  * en ligne. L'information ne depend jamais d'une interaction indisponible.
  */
-export default function Process({ dict }: { dict: Dictionary }) {
+/**
+ * `title` et `eyebrow` sont surchargeables parce que le meme bloc ne porte pas
+ * le meme nom selon la page qui l'accueille. Sur le studio, il s'annonce comme
+ * l'offre. Sur la page Services, ce meme titre repeterait l'identite de la
+ * page — le visiteur vient de lire « Services » dans le menu et dans l'onglet,
+ * et un titre qui repete l'endroit ou l'on se trouve n'apprend rien.
+ *
+ * Le dictionnaire reste la valeur par defaut : une page qui ne precise rien
+ * garde exactement le comportement d'avant.
+ */
+export default function Process({
+  dict,
+  title,
+  eyebrow,
+}: {
+  dict: Dictionary;
+  title?: string;
+  eyebrow?: string;
+}) {
   const total = String(dict.process.steps.length).padStart(2, "0");
 
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -83,8 +101,8 @@ export default function Process({ dict }: { dict: Dictionary }) {
   return (
     <section ref={sectionRef} data-chapter={dict.chapters.services} className="section container-lab relative">
       <SectionHeader
-        eyebrow={dict.process.eyebrow}
-        title={dict.process.title}
+        eyebrow={eyebrow ?? dict.process.eyebrow}
+        title={title ?? dict.process.title}
         count={total}
         className="mb-14"
       />
