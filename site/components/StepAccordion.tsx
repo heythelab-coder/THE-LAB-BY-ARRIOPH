@@ -42,8 +42,10 @@ export default function StepAccordion({ dict }: { dict: Dictionary }) {
   const [open, setOpen] = useState(0);
   const steps = dict.process.steps;
 
+  // Ce bloc decrit la METHODE, pas l'offre : l'ancre et le libelle de chapitre
+  // le disent maintenant. Les expertises ont leur propre page.
   return (
-    <section id="services" data-chapter={dict.chapters.services} className="section container-lab">
+    <section id="method" data-chapter={dict.chapters.method} className="section container-lab">
       <SectionHeader
         eyebrow={dict.process.eyebrow}
         title={dict.process.title}

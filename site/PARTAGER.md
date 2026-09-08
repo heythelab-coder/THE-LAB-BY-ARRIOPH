@@ -66,8 +66,9 @@ Trois points que vos relecteurs remonteront à coup sûr, et qui n'ont rien à v
 avec le design. Autant les traiter avant, pour que les retours portent sur ce
 qui compte :
 
-1. **L'email et le téléphone sont des placeholders** (`hello@thelab.studio`,
-   `+33 6 00 00 00 00`). Quelqu'un essaiera de cliquer.
+1. **Les liens réseaux ne mènent nulle part** : ils pointent vers les pages
+   d'accueil d'Instagram, LinkedIn, YouTube et TikTok, sans nom de compte.
+   Quelqu'un essaiera de cliquer.
 2. **Le formulaire de contact n'envoie rien** tant que `RESEND_API_KEY` ou
    `CONTACT_WEBHOOK_URL` n'est pas configuré. Sur un lien partagé, une demande
    test se perdra. Voir `.env.example`.

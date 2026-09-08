@@ -1,7 +1,7 @@
-# THE LAB — site
+# 4Lab — site
 
 Site vitrine bilingue (FR/EN) construit avec **Next.js 15 (App Router) + Tailwind CSS**.
-Structure et mise en page inspirées du template Framer « Vence » ; contenu, visuels et identité sont ceux de THE LAB.
+Structure et mise en page inspirées du template Framer « Vence » ; contenu, visuels et identité sont ceux de 4Lab.
 
 ## Démarrer
 
@@ -249,8 +249,10 @@ liste de sélecteurs centralisée :
 - `components/LabMark.tsx` — monogramme (six disques en hexagone) redessiné en
   SVG plutôt que découpé dans le JPG source : fond transparent, net à toute
   taille, aucune requête, et la couleur suit `currentColor`. Utilisé dans la nav,
-  avec le nom « THE LAB » en libellé masqué pour les lecteurs d'écran.
-- `public/brand/wordmark.png` — logotype « The Lab by Arrioph » qui ferme le pied
+  avec le nom « 4Lab » en libellé masqué pour les lecteurs d'écran.
+- `public/brand/wordmark-4lab.png` — logotype « 4Lab » qui ferme le pied de page,
+  recadré au tracé depuis le fichier de marque. Blanc sur transparent, inversé en
+  CSS pour le thème clair : un seul fichier couvre les deux thèmes
   de page. Détouré depuis `7.jpg` par keying sur le canal minimum : le fond bleu
   y plafonnait à 139 quand le texte était à 253, d'où une séparation nette et
   aucune frange colorée. 10 Ko au lieu de 139 Ko.

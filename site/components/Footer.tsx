@@ -86,28 +86,29 @@ export default function Footer({ dict, lang }: { dict: Dictionary; lang: Locale 
         </div>
       </div>
 
-      {/* Signature de fin : le logotype detoure, blanc sur le noir de la page.
-          Le fond bleu du fichier source a ete retire par keying sur le canal
-          minimum (le bleu plafonnait a 139, le texte etait a 253) — d'ou un PNG
-          transparent de 10 Ko a la place du JPG de 139 Ko. */}
+      {/* Signature de fin : le logotype, recadre au trace depuis le fichier de
+          marque (le carre source est transparent aux trois quarts).
+          Un seul fichier, en blanc, INVERSE en theme clair : sur un trace blanc
+          pur sur fond transparent, `invert` donne exactement du noir sans
+          toucher a la transparence. Deux fichiers auraient double le poids et
+          la maintenance, et la version precedente n'en avait qu'un seul, blanc,
+          sans inversion — donc invisible sur le fond du theme clair. */}
       <Reveal className="container-lab flex justify-center border-t border-line py-14 md:py-16">
         <Image
-          src="/brand/wordmark.png"
-          alt="The Lab by Arrioph"
-          width={659}
-          height={241}
+          src="/brand/wordmark-4lab.png"
+          alt="4Lab"
+          width={904}
+          height={313}
           sizes="(max-width: 768px) 70vw, 420px"
-          // Plafonne a 420px : le logotype ne fait que 659px de large dans le
-          // fichier source, donc au-dela il devient mou sur un ecran Retina
-          // (420 x 2 = 840, deja un leger sur-echantillonnage). Pour l'afficher
-          // plus grand, il faut un export vectoriel ou une source plus definie.
-          className="h-auto w-[70%] max-w-[420px]"
+          // Plafonne a 420px : la source fait 904px de large, donc 420 restent
+          // nets sur un ecran Retina (420 x 2 = 840).
+          className="h-auto w-[70%] max-w-[420px] [html[data-theme=light]_&]:invert"
         />
       </Reveal>
 
       <div className="container-lab flex flex-col gap-3 border-t border-line py-6 md:flex-row md:items-center md:justify-between">
         <p className="t-meta nums text-paper/55">
-          © {new Date().getFullYear()} THE LAB. {dict.footer.rights}
+          © {new Date().getFullYear()} 4Lab. {dict.footer.rights}
         </p>
         <a href="#main" className="group t-meta text-paper/55 hover:text-paper">
           <span className="link-sweep">{dict.footer.backToTop}</span>

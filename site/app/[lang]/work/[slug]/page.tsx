@@ -33,7 +33,7 @@ export async function generateMetadata({
     description: copy.desc,
     alternates: { canonical: `/${locale}/work/${slug}` },
     openGraph: {
-      title: `${copy.title} — THE LAB`,
+      title: `${copy.title} — 4Lab`,
       description: copy.desc,
       images: [{ url: project.image }],
     },

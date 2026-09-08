@@ -6,9 +6,9 @@ export type Dictionary = typeof fr;
 
 export const fr = {
   meta: {
-    title: "THE LAB — Laboratoire de lancement de marque",
+    title: "4Lab — Laboratoire de lancement de marque",
     description:
-      "On lance des marques. Positionnement, récit, identité et première campagne. Formulés avec vous, jamais vendus sur catalogue. Par Arrioph.",
+      "Stratégie, identité, digital et contenus pour les marques qui se lancent et pour celles qui ouvrent un nouveau chapitre.",
   },
   nav: {
     work: "Projets",
@@ -22,9 +22,12 @@ export const fr = {
   hero: {
     line1: "Les marques ne naissent pas.",
     line2: "Elles se formulent.",
+    // La signature est évocatrice : la ligne qui suit doit dire concrètement
+    // ce qu'on fait, sinon le visiteur repart avec une jolie phrase et
+    // aucune idée de ce qu'il peut nous demander.
     subtitle:
-      "On accompagne les marques au moment qui décide de tout : le lancement. Vous n'arrivez pas avec un brief, vous arrivez avec un projet. Le brief, on l'écrit ensemble.",
-    primary: "Réserver une séance",
+      "On donne forme aux projets qui commencent et aux marques qui ouvrent un nouveau chapitre. Stratégie, identité, digital et contenus : une même équipe pour relier les décisions à leur mise en œuvre.",
+    primary: "Parlons de votre projet",
     secondary: "Voir les projets",
     tagline: "Laboratoire de lancement, par Arrioph",
     scroll: "Faire défiler",
@@ -36,16 +39,36 @@ export const fr = {
     opening: "Ouverture",
     studio: "Le studio",
     work: "Projets",
-    services: "Services",
     method: "Méthode",
     contact: "Contact",
   },
   approach: {
-    eyebrow: "NOTRE POSITION",
-    title: "On ne vend pas de services.\nOn formule des marques.",
-    p1: "La plupart des agences font tout. Nous, on fait une chose : le lancement. Le moment où la marque n'existe pas encore, où tout est encore ouvert, où une seule décision de positionnement pèse plus lourd que dix ans de communication.",
-    p2: "On ne commence pas par une proposition commerciale. On commence par écouter. Vous racontez ce que vous construisez, on cherche ce qui est réellement en jeu, puis on formule avec vous. Derrière, l'expertise data, IA et technologique d'Arrioph vient prouver ce que l'intuition seule ne peut pas.",
-    name: "THE LAB",
+    eyebrow: "CE QU'ON FAIT",
+    title: "Là où une marque\nprend forme.",
+    p1: "Un lancement, une offre qui s'ouvre, un marché qu'on aborde : ce sont des moments où beaucoup de décisions se prennent en même temps, et où elles se tiennent ou s'annulent entre elles. On les prend avec vous, puis on les met en œuvre.",
+    /**
+     * Trois situations plutôt qu'une liste de prestations : le visiteur se
+     * reconnaît dans un moment, pas dans un intitulé de service. C'est aussi
+     * ce qui ouvre la porte aux entreprises installées sans avoir à écrire
+     * « on travaille aussi avec les grandes marques ».
+     */
+    situations: [
+      {
+        label: "Construire et lancer une marque",
+        body: "Vous partez d'un projet, parfois d'un nom. On pose le positionnement, l'identité et la présence qui vont avec.",
+      },
+      {
+        label: "Lancer une nouvelle offre",
+        body: "La marque existe déjà. Il faut faire une place à la nouveauté sans abîmer ce qui fonctionne.",
+      },
+      {
+        label: "Ouvrir un nouveau chapitre",
+        body: "Nouveau marché, nouveau public, nouvelle étape. On reprend le positionnement là où il coince et on réaligne le reste.",
+      },
+    ],
+    outcome:
+      "Ce que ça donne : une offre qu'on comprend en une phrase, des efforts concentrés au bon endroit, une présence cohérente d'un support à l'autre, et de quoi aborder vos premiers clients sans improviser.",
+    name: "4Lab",
     role: "Laboratoire de lancement, par Arrioph",
   },
   clients: {
@@ -60,34 +83,37 @@ export const fr = {
     view: "Voir",
   },
   quote:
-    "Un lancement raté ne se répare pas, il se recommence. C'est pour ça qu'on écoute avant de proposer, qu'on formule avant de produire, et qu'on mesure avant de conclure.",
+    "Ce qui tient une marque, ce n'est pas le logo, ce sont les décisions prises avant lui. On écoute d'abord, on décide ensuite, on produit une fois que c'est clair, puis on regarde ce que le marché en fait.",
   process: {
-    eyebrow: "PROTOCOLE",
-    title: "Services",
+    eyebrow: "MÉTHODE",
+    // La méthode et les expertises sont deux choses différentes. Ce bloc
+    // décrit COMMENT on avance ; les expertises (stratégie, identité,
+    // digital, contenus, activation) vivent dans `content/services.ts`.
+    title: "Comment on travaille.",
     steps: [
       {
         n: "01",
         title: "Écoute",
-        body: "Une séance, sans engagement et sans devis. Vous racontez le vrai projet, pas la version présentable. On pose des questions, on prend des notes, on ne vend rien. À la sortie, vous savez déjà si on est les bons.",
-        tags: ["Séance découverte", "Sans engagement", "Aucun devis"],
+        body: "Une séance, sans engagement et sans devis. Vous racontez le projet tel qu'il est, pas la version présentable. On pose des questions, on prend des notes. À la sortie, vous savez si on est les bons, et nous aussi.",
+        tags: ["Séance d'écoute", "Sans engagement", "Aucun devis"],
       },
       {
         n: "02",
         title: "Diagnostic",
-        body: "On cherche ce qui est réellement en jeu : le marché, la concurrence, ce que votre audience croit déjà. Arrioph apporte la donnée. Vous recevez une lecture écrite de votre situation, utile même si vous vous arrêtez là.",
-        tags: ["Lecture de marché", "Données", "Enjeu réel"],
+        body: "On cherche ce qui est réellement en jeu : le marché, la concurrence, ce que votre audience croit déjà, ce qui tient déjà chez vous. Cette lecture ouvre la mission et sert de base à tout ce qui suit.",
+        tags: ["Lecture de marché", "Concurrence", "Enjeu réel"],
       },
       {
         n: "03",
         title: "Formulation",
-        body: "On construit la marque avec vous : positionnement, récit, nom, identité. Par itérations courtes, à voix haute, jamais en boîte noire. Vous voyez les hypothèses écartées autant que celles retenues.",
+        body: "On construit avec vous ce qui doit l'être : positionnement, récit, nom, identité. Par itérations courtes, à voix haute. Vous voyez les pistes écartées autant que celles retenues.",
         tags: ["Positionnement", "Récit", "Identité", "Nom"],
       },
       {
         n: "04",
         title: "Lancement",
-        body: "On met la marque au monde : présence digitale, première campagne, contenu de lancement. Puis on observe ce que le marché en fait, et on ajuste. Un lancement n'est pas une livraison, c'est une mesure.",
-        tags: ["Campagne de lancement", "Présence digitale", "Mesure"],
+        body: "On met la marque au monde : site, contenus, campagne. Puis on regarde ce que le marché en fait, et on ajuste. Un lancement n'est pas une livraison, c'est un début.",
+        tags: ["Campagne", "Présence digitale", "Contenus"],
       },
     ],
   },
@@ -97,43 +123,44 @@ export const fr = {
     items: [
       {
         q: "Vous faites quoi, exactement ?",
-        a: "Des lancements. Positionnement, récit, identité, présence digitale et première campagne. Pas de retainer social, pas de régie média, pas de production à la demande. Si votre besoin n'est pas un lancement, on vous le dira dès le premier échange.",
+        a: "Stratégie et positionnement, identité de marque, présence digitale, contenus et activation. Le tout autour d'un projet qui se lance ou qui change d'échelle. Selon votre point de départ, on prend l'ensemble ou seulement ce qui manque.",
       },
       {
-        q: "Pourquoi uniquement les lancements ?",
-        a: "Parce que c'est le moment où le travail compte le plus, et où il est le plus souvent bâclé. Une marque lancée sur un positionnement faible passe les dix années suivantes à compenser. On préfère être là avant.",
+        q: "À qui ça s'adresse ?",
+        a: "Beaucoup de fondateurs et de jeunes structures, parce que c'est là que tout se décide en même temps. Et des entreprises installées qui lancent une offre, ouvrent un marché ou passent une étape. Le point commun n'est pas la taille, c'est le moment.",
+      },
+      {
+        q: "Faut-il tout refaire pour travailler avec vous ?",
+        a: "Non. Certaines missions reprennent la marque depuis le positionnement, d'autres se limitent à un site, une identité ou une campagne. On commence par regarder ce qui tient déjà, et on ne rouvre que ce qui bloque.",
       },
       {
         q: "Comment se passe le premier échange ?",
-        a: "Une séance d'écoute de trente minutes. Pas besoin de brief, ni de budget arrêté, ni de deck. Vous racontez le projet, on pose des questions. Aucun devis n'est envoyé à ce stade.",
+        a: "Une séance d'écoute d'une trentaine de minutes. Pas besoin de brief, ni de budget arrêté, ni de deck. Vous racontez le projet, on pose des questions. Aucun devis n'est envoyé à ce stade.",
       },
       {
         q: "Combien ça coûte ?",
-        a: "Impossible à dire avant de savoir ce qu'on lance. Ce qu'on peut dire : le périmètre se décide ensemble après le diagnostic, jamais avant. On chiffre un lancement défini, pas un catalogue de prestations.",
+        a: "Ça dépend de ce qu'on lance et de ce qui existe déjà. Le périmètre se décide ensemble après le premier échange, et le chiffrage porte sur ce périmètre-là, pas sur un catalogue de prestations.",
       },
       {
-        q: "Qu'est-ce qu'Arrioph change concrètement ?",
-        a: "Arrioph est un cabinet de transformation digitale : data, IA, cloud, technologie. Concrètement : nos décisions créatives s'appuient sur de la donnée réelle, et ce qu'on lance peut se brancher sur de vrais systèmes au lieu de rester une image.",
-      },
-      {
-        q: "Et si on est déjà lancés ?",
-        a: "Alors on parle de relancement : repositionnement, changement de cap, nouveau marché. Même protocole. En revanche, si vous cherchez une agence pour exécuter un plan déjà écrit, on n'est pas les bons, et on vous le dira vite.",
+        q: "Qu'est-ce qu'Arrioph apporte ?",
+        a: "Arrioph est notre partenaire sur le conseil et les missions associées. Quand un projet dépasse la marque et touche à l'organisation ou aux outils, on s'appuie sur cette expertise plutôt que d'improviser.",
       },
     ],
   },
   cta: {
     eyebrow: "PROCHAINE ÉTAPE",
     availability: "Prochaine disponibilité :",
-    title: "Racontez-nous ce que vous construisez.",
-    body: "Pas besoin de brief. Une séance d'écoute, trente minutes, sans engagement.",
-    button: "Réserver une séance",
+    title: "Parlons de ce que vous construisez.",
+    body: "Pas besoin de brief. Une séance d'écoute d'une trentaine de minutes, sans engagement, pour comprendre où vous en êtes et si on peut aider.",
+    button: "Parlons de votre projet",
   },
   footer: {
     pagesLabel: "Pages",
     socialsLabel: "Réseaux",
     contactLabel: "Contact",
     rights: "Tous droits réservés.",
-    blurb: "Laboratoire de lancement de marque. Positionnement, récit, identité et lancement, formulés avec vous. Par Arrioph.",
+    blurb:
+      "Stratégie, identité, digital et contenus pour les marques qui se lancent et pour celles qui ouvrent un nouveau chapitre.",
     backToTop: "Haut de page ↑",
     pages: [
       { label: "Accueil", href: "" },
@@ -147,9 +174,9 @@ export const fr = {
 
 export const en: Dictionary = {
   meta: {
-    title: "THE LAB — Brand launch lab",
+    title: "4Lab — Brand launch lab",
     description:
-      "We launch brands. Positioning, story, identity and first campaign. Formulated with you, never sold off a catalogue. By Arrioph.",
+      "Strategy, identity, digital and content for brands being launched and for brands opening a new chapter.",
   },
   nav: {
     work: "Work",
@@ -164,8 +191,8 @@ export const en: Dictionary = {
     line1: "Brands aren't born.",
     line2: "They're formulated.",
     subtitle:
-      "We work with brands at the moment that decides everything: the launch. You don't arrive with a brief, you arrive with a project. We write the brief together.",
-    primary: "Book a session",
+      "We give shape to projects that are starting out and to brands opening a new chapter. Strategy, identity, digital and content: one team connecting the decisions to the work that follows them.",
+    primary: "Let's talk about your project",
     secondary: "View work",
     tagline: "Brand launch lab, by Arrioph",
     scroll: "Scroll",
@@ -177,16 +204,30 @@ export const en: Dictionary = {
     opening: "Opening",
     studio: "The studio",
     work: "Work",
-    services: "Services",
     method: "Method",
     contact: "Contact",
   },
   approach: {
-    eyebrow: "WHERE WE STAND",
-    title: "We don't sell services.\nWe formulate brands.",
-    p1: "Most agencies do everything. We do one thing: the launch. The moment the brand doesn't exist yet, when everything is still open, when a single positioning decision outweighs ten years of communication.",
-    p2: "We don't open with a proposal. We open by listening. You tell us what you're building, we look for what's actually at stake, then we formulate it with you. Behind us, Arrioph's data, AI and technology expertise proves what instinct alone cannot.",
-    name: "THE LAB",
+    eyebrow: "WHAT WE DO",
+    title: "Where a brand\ntakes shape.",
+    p1: "A launch, a new offer, a market you're stepping into: these are moments when a lot of decisions get made at once, and where they either hold together or cancel each other out. We make them with you, then we build them.",
+    situations: [
+      {
+        label: "Build and launch a brand",
+        body: "You start with a project, sometimes a name. We set the positioning, the identity and the presence that go with it.",
+      },
+      {
+        label: "Launch a new offer",
+        body: "The brand already exists. The new thing needs its own room without damaging what already works.",
+      },
+      {
+        label: "Open a new chapter",
+        body: "New market, new audience, new stage. We reopen the positioning where it strains and realign the rest.",
+      },
+    ],
+    outcome:
+      "What that gives you: an offer people grasp in one sentence, effort concentrated where it counts, a presence that holds from one surface to the next, and enough to meet your first customers without improvising.",
+    name: "4Lab",
     role: "Brand launch lab, by Arrioph",
   },
   clients: {
@@ -201,34 +242,34 @@ export const en: Dictionary = {
     view: "View",
   },
   quote:
-    "A failed launch can't be repaired, only restarted. That's why we listen before we propose, formulate before we produce, and measure before we call it done.",
+    "What holds a brand together isn't the logo, it's the decisions made before it. We listen first, decide next, produce once it's clear, then watch what the market does with it.",
   process: {
-    eyebrow: "PROTOCOL",
-    title: "Services",
+    eyebrow: "METHOD",
+    title: "How we work.",
     steps: [
       {
         n: "01",
         title: "Intake",
-        body: "One session, no commitment and no quote. You tell us the real project, not the presentable version. We ask questions, we take notes, we sell nothing. By the end, you already know whether we're the right fit.",
-        tags: ["Discovery session", "No commitment", "No quote"],
+        body: "One session, no commitment and no quote. You tell us the project as it is, not the presentable version. We ask questions, we take notes. By the end, you know whether we're the right fit, and so do we.",
+        tags: ["Listening session", "No commitment", "No quote"],
       },
       {
         n: "02",
         title: "Diagnostic",
-        body: "We look for what's actually at stake: the market, the competition, what your audience already believes. Arrioph brings the data. You get a written reading of your situation, useful even if you stop there.",
-        tags: ["Market reading", "Data", "Real stakes"],
+        body: "We look for what's actually at stake: the market, the competition, what your audience already believes, what already works on your side. This reading opens the engagement and grounds everything after it.",
+        tags: ["Market reading", "Competition", "Real stakes"],
       },
       {
         n: "03",
         title: "Formulation",
-        body: "We build the brand with you: positioning, story, name, identity. Short iterations, out loud, never in a black box. You see the hypotheses we drop as clearly as the ones we keep.",
+        body: "We build what needs building, with you: positioning, story, name, identity. Short iterations, out loud. You see the routes we drop as clearly as the ones we keep.",
         tags: ["Positioning", "Story", "Identity", "Naming"],
       },
       {
         n: "04",
         title: "Release",
-        body: "We put the brand into the world: digital presence, first campaign, launch content. Then we watch what the market does with it, and adjust. A launch isn't a delivery, it's a measurement.",
-        tags: ["Launch campaign", "Digital presence", "Measurement"],
+        body: "We put the brand into the world: site, content, campaign. Then we watch what the market does with it, and adjust. A launch isn't a delivery, it's a beginning.",
+        tags: ["Campaign", "Digital presence", "Content"],
       },
     ],
   },
@@ -238,27 +279,27 @@ export const en: Dictionary = {
     items: [
       {
         q: "What exactly do you do?",
-        a: "Launches. Positioning, story, identity, digital presence and first campaign. No social retainers, no media buying, no production on demand. If what you need isn't a launch, we'll tell you in the first conversation.",
+        a: "Strategy and positioning, brand identity, digital presence, content and activation. All of it around a project that's launching or changing gear. Depending on where you start, we take the whole thing or only what's missing.",
       },
       {
-        q: "Why only launches?",
-        a: "Because it's the moment the work matters most, and the moment it's most often rushed. A brand launched on weak positioning spends the next ten years compensating. We'd rather be there before that.",
+        q: "Who is it for?",
+        a: "Plenty of founders and young companies, because that's where everything gets decided at once. And established companies launching an offer, entering a market or reaching a new stage. The common thread isn't size, it's timing.",
+      },
+      {
+        q: "Do we have to redo everything to work with you?",
+        a: "No. Some engagements reopen the brand from the positioning up, others stop at a site, an identity or a campaign. We start by looking at what already holds, and only reopen what's in the way.",
       },
       {
         q: "What does the first conversation look like?",
-        a: "A thirty-minute listening session. No brief needed, no fixed budget, no deck. You tell us the project, we ask questions. No quote is sent at this stage.",
+        a: "A listening session of about thirty minutes. No brief needed, no fixed budget, no deck. You tell us the project, we ask questions. No quote is sent at this stage.",
       },
       {
         q: "What does it cost?",
-        a: "Impossible to say before we know what we're launching. What we can say: scope is decided together after the diagnostic, never before. We price a defined launch, not a catalogue of services.",
+        a: "It depends on what's being launched and what already exists. Scope is decided together after the first conversation, and the pricing covers that scope, not a catalogue of services.",
       },
       {
-        q: "What does Arrioph actually change?",
-        a: "Arrioph is a digital transformation firm: data, AI, cloud, technology. In practice: our creative decisions rest on real data, and what we launch can plug into real systems instead of staying an image.",
-      },
-      {
-        q: "What if we've already launched?",
-        a: "Then we're talking about a relaunch: repositioning, change of direction, new market. Same protocol. That said, if you're looking for an agency to execute a plan that's already written, we're not the right fit, and we'll say so quickly.",
+        q: "What does Arrioph bring?",
+        a: "Arrioph is our partner on consulting and the work that comes with it. When a project reaches past the brand into the organisation or the tooling, we lean on that expertise instead of improvising.",
       },
     ],
   },
@@ -266,15 +307,16 @@ export const en: Dictionary = {
     eyebrow: "NEXT STEP",
     availability: "Next opening:",
     title: "Tell us what you're building.",
-    body: "No brief required. One listening session, thirty minutes, no commitment.",
-    button: "Book a session",
+    body: "No brief required. A listening session of about thirty minutes, no commitment, to understand where you are and whether we can help.",
+    button: "Let's talk about your project",
   },
   footer: {
     pagesLabel: "Pages",
     socialsLabel: "Socials",
     contactLabel: "Contact",
     rights: "All rights reserved.",
-    blurb: "Brand launch lab. Positioning, story, identity and launch, formulated with you. By Arrioph.",
+    blurb:
+      "Strategy, identity, digital and content for brands being launched and for brands opening a new chapter.",
     backToTop: "Back to top ↑",
     pages: [
       { label: "Home", href: "" },

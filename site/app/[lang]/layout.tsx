@@ -37,7 +37,7 @@ export async function generateMetadata({
     title: {
       default: dict.meta.title,
       // Les pages internes n'ont qu'a fournir leur propre titre.
-      template: `%s — THE LAB`,
+      template: `%s — 4Lab`,
     },
     description: dict.meta.description,
     openGraph: {
@@ -45,7 +45,7 @@ export async function generateMetadata({
       description: dict.meta.description,
       type: "website",
       url: `/${locale}`,
-      siteName: "THE LAB",
+      siteName: "4Lab",
       locale: locale === "fr" ? "fr_FR" : "en_US",
     },
     twitter: {
@@ -104,7 +104,7 @@ export default async function RootLayout({
         <Ambient />
         <ChapterRail />
         <Entrance
-          name="THE LAB"
+          name="4Lab"
           tagline={dict.hero.tagline}
           city={CONTACT.city}
           skipLabel={dict.entrance.skip}

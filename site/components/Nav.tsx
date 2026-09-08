@@ -115,7 +115,7 @@ export default function Nav({ dict, lang }: { dict: Dictionary; lang: Locale }) 
                 scrolled ? "h-[24px] w-[24px]" : "h-[28px] w-[28px]"
               }`}
             />
-            <span className="sr-only">THE LAB</span>
+            <span className="sr-only">4Lab</span>
           </Link>
 
           <div className="hidden items-center md:flex">

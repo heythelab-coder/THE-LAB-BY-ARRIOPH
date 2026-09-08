@@ -8,7 +8,10 @@ import type { Dictionary } from "@/content/dictionary";
 export default function Approach({ dict }: { dict: Dictionary }) {
   return (
     <section id="studio" data-chapter={dict.chapters.studio} className="container-lab pt-16">
-      <div className="grid gap-10 md:h-[760px] md:grid-cols-12 md:gap-8">
+      {/* Hauteur MINIMALE et non fixe : la colonne de gauche porte desormais
+          les trois situations en plus du texte. A hauteur fixe, le depassement
+          serait sorti du cadre au lieu de pousser la section. */}
+      <div className="grid gap-10 md:min-h-[760px] md:grid-cols-12 md:gap-8">
         <Reveal className="flex flex-col justify-center md:col-span-6 md:pr-10">
           <p className="eyebrow border-t border-line pt-4">{dict.approach.eyebrow}</p>
 
@@ -20,10 +23,27 @@ export default function Approach({ dict }: { dict: Dictionary }) {
           />
 
           {/* Mesure limitee a ~58 caracteres : au-dela, l'oeil perd la ligne. */}
-          <div className="mt-8 max-w-[58ch] space-y-4 text-paper/70">
+          <div className="mt-7 max-w-[58ch] text-paper/70">
             <p className="t-prose">{dict.approach.p1}</p>
-            <p className="t-prose">{dict.approach.p2}</p>
           </div>
+
+          {/* Les trois situations. Un visiteur ne se reconnait pas dans un
+              intitule de prestation, il se reconnait dans un moment : « je
+              lance », « j'ouvre une offre », « je change d'echelle ». C'est
+              aussi ce qui laisse la porte ouverte aux entreprises installees
+              sans avoir a l'ecrire noir sur blanc.
+              Filet a gauche plutot que puce : la liste se lit comme une suite
+              de cas, pas comme un argumentaire. */}
+          <ul className="mt-7 max-w-[58ch] space-y-3 border-l border-line pl-5">
+            {dict.approach.situations.map((situation) => (
+              <li key={situation.label}>
+                <p className="t-body font-medium">{situation.label}</p>
+                <p className="t-meta mt-1 text-paper/55">{situation.body}</p>
+              </li>
+            ))}
+          </ul>
+
+          <p className="t-prose mt-7 max-w-[58ch] text-paper/70">{dict.approach.outcome}</p>
 
           <div className="mt-10 flex items-center gap-3 border-t border-line pt-6">
             <Image

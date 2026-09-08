@@ -1,5 +1,5 @@
-// Coordonnées et liens — à remplacer par les vraies infos de THE LAB.
-// Contact details and links — replace with THE LAB's real information.
+// Coordonnées et liens — à remplacer par les vraies infos de 4Lab.
+// Contact details and links — replace with 4Lab's real information.
 
 // URL de production — sert de base aux métadonnées Open Graph, au sitemap
 // et aux liens canoniques. À changer au moment du déploiement.

@@ -1,20 +1,27 @@
 import type { Locale } from "./dictionary";
 
 /**
- * Offre du studio.
+ * Expertises du studio.
+ *
+ * A ne pas confondre avec la METHODE (Ecoute, Diagnostic, Formulation,
+ * Lancement), qui vit dans `dictionary.ts` sous `process`. La methode dit
+ * COMMENT une mission avance dans le temps ; les expertises ci-dessous disent
+ * SUR QUOI on travaille. La version precedente decalquait les deux l'une sur
+ * l'autre — quatre prestations pour quatre etapes — ce qui laissait croire
+ * qu'une mission devait forcement passer par les quatre.
  *
  * Meme discipline que les projets : ce qui est neutre (identifiant, numero) est
  * declare une fois, seul le texte est localise.
  *
- * Le contenu suit le positionnement du site — un laboratoire de lancement — et
- * non un catalogue d'agence. D'ou quatre prestations qui correspondent aux
- * quatre etapes du protocole, et un bloc « ce qu'on ne fait pas » : annoncer ses
- * limites est ce qui rend credible le reste de la liste.
+ * Chaque resume repond a deux questions dans l'ordre : a quel besoin
+ * l'expertise repond, puis ce qu'on fait concretement. Les livrables disent ce
+ * que le client recoit. C'est ce triptyque qui permet de reconnaitre son propre
+ * cas au lieu de lire une categorie.
  */
 
 export type ServiceCopy = {
   title: string;
-  /** Une phrase : ce que la prestation resout. */
+  /** Le besoin d'abord, ce qu'on fait ensuite. */
   summary: string;
   /** Ce que le client recoit concretement. */
   deliverables: string[];
@@ -29,30 +36,30 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-    id: "positionnement",
+    id: "strategie",
     n: "01",
     fr: {
-      title: "Positionnement & stratégie",
+      title: "Stratégie & positionnement",
       summary:
-        "Décider ce que la marque défend, contre qui elle se place, et pourquoi quelqu'un devrait la choisir. C'est la décision qui rend toutes les suivantes plus faciles.",
+        "Quand l'offre est difficile à résumer, tout le reste devient cher : chaque support doit réexpliquer. On décide ce que la marque défend, à qui elle parle en premier et ce qui la rend préférable, puis on l'écrit noir sur blanc.",
       deliverables: [
         "Lecture de marché et concurrence",
         "Positionnement écrit",
         "Récit de marque",
-        "Ton de voix",
         "Messages clés par audience",
+        "Ton de voix",
       ],
     },
     en: {
-      title: "Positioning & strategy",
+      title: "Strategy & positioning",
       summary:
-        "Deciding what the brand stands for, who it stands against, and why anyone should choose it. The decision that makes every later one easier.",
+        "When the offer is hard to summarise, everything downstream gets expensive: every asset has to re-explain it. We decide what the brand stands for, who it addresses first and what makes it preferable, then put it in writing.",
       deliverables: [
         "Market and competitive read",
         "Written positioning",
         "Brand narrative",
-        "Tone of voice",
         "Key messages per audience",
+        "Tone of voice",
       ],
     },
   },
@@ -62,7 +69,7 @@ export const SERVICES: Service[] = [
     fr: {
       title: "Identité de marque",
       summary:
-        "Donner une forme à la stratégie : un nom, un signe, un système qui tient sur un écran comme sur une façade, et qui reste reconnaissable quand d'autres que nous l'appliquent.",
+        "Une marque reconnaissable coûte moins cher à faire connaître. On donne une forme à la stratégie — nom, signe, typographie, couleurs, direction photo — et un cadre assez clair pour que d'autres que nous puissent l'appliquer sans la déformer.",
       deliverables: [
         "Nom et territoire verbal",
         "Logo et déclinaisons",
@@ -74,7 +81,7 @@ export const SERVICES: Service[] = [
     en: {
       title: "Brand identity",
       summary:
-        "Giving the strategy a form: a name, a mark, a system that holds on a screen as well as on a building, and stays recognisable when other people apply it.",
+        "A recognisable brand costs less to make known. We give the strategy a form — name, mark, type, colour, photo direction — and a frame clear enough that people other than us can apply it without bending it.",
       deliverables: [
         "Name and verbal territory",
         "Logo and variants",
@@ -85,58 +92,86 @@ export const SERVICES: Service[] = [
     },
   },
   {
-    id: "presence",
+    id: "digital",
     n: "03",
     fr: {
       title: "Présence digitale",
       summary:
-        "Le premier endroit où votre marque sera jugée. Site, design system et contenu de lancement, conçus pour être tenus dans la durée, pas seulement livrés.",
+        "C'est le premier endroit où votre marque sera jugée, souvent avant le premier échange. On conçoit et développe le site, avec un système de composants que votre équipe peut faire vivre après la livraison.",
       deliverables: [
         "Site vitrine ou plateforme",
         "Design system réutilisable",
-        "Contenu éditorial de lancement",
-        "Modèles réseaux sociaux",
+        "Rédaction des pages",
+        "Référencement de base et mesure",
         "Transmission et formation",
       ],
     },
     en: {
       title: "Digital presence",
       summary:
-        "The first place your brand gets judged. Site, design system and launch content, built to be maintained over time, not just delivered.",
+        "This is the first place your brand gets judged, often before the first conversation. We design and build the site, with a component system your team can keep alive after handover.",
       deliverables: [
         "Showcase site or platform",
         "Reusable design system",
-        "Launch editorial content",
-        "Social templates",
+        "Page copywriting",
+        "Baseline SEO and measurement",
         "Handover and training",
       ],
     },
   },
   {
-    id: "campagne",
+    id: "contenus",
     n: "04",
     fr: {
-      title: "Campagne de lancement",
+      title: "Contenus & éditorial",
       summary:
-        "Mettre la marque au monde et regarder ce que le marché en fait. Direction artistique, production et mesure, puis on ajuste sur ce qu'on observe.",
+        "Une identité ne se voit qu'à travers ce qu'elle publie. On produit les images, les vidéos et les textes qui la font exister au quotidien, et on tient le planning qui évite la page blanche du lundi matin.",
       deliverables: [
-        "Concept de campagne",
+        "Direction artistique",
         "Production photo et vidéo",
-        "Déclinaisons par canal",
-        "Plan de diffusion",
-        "Mesure et ajustement",
+        "Planning éditorial",
+        "Publications et déclinaisons",
+        "Gabarits réutilisables",
       ],
     },
     en: {
-      title: "Launch campaign",
+      title: "Content & editorial",
       summary:
-        "Putting the brand into the world and watching what the market does with it. Art direction, production and measurement, then we adjust on what we see.",
+        "An identity only becomes visible through what it publishes. We produce the images, films and words that make it exist day to day, and hold the schedule that prevents the Monday-morning blank page.",
+      deliverables: [
+        "Art direction",
+        "Photo and video production",
+        "Editorial calendar",
+        "Posts and adaptations",
+        "Reusable templates",
+      ],
+    },
+  },
+  {
+    id: "activation",
+    n: "05",
+    fr: {
+      title: "Activation & campagne",
+      summary:
+        "Un lancement qui ne rencontre personne n'est pas un lancement. On construit le dispositif qui met la marque devant son public — concept, déclinaisons par canal, relais et créateurs — puis on regarde ce qui a marché.",
+      deliverables: [
+        "Concept de campagne",
+        "Déclinaisons par canal",
+        "Collaborations créateurs",
+        "Événement et activation terrain",
+        "Bilan et ajustements",
+      ],
+    },
+    en: {
+      title: "Activation & campaign",
+      summary:
+        "A launch nobody meets isn't a launch. We build what puts the brand in front of its audience — concept, per-channel adaptations, partners and creators — then look at what actually worked.",
       deliverables: [
         "Campaign concept",
-        "Photo and video production",
         "Per-channel adaptations",
-        "Distribution plan",
-        "Measurement and adjustment",
+        "Creator collaborations",
+        "Events and on-the-ground activation",
+        "Review and adjustments",
       ],
     },
   },

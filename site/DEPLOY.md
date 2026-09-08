@@ -7,16 +7,17 @@ inconnus en 404, `sitemap.xml` et `robots.txt` sont servis.
 
 Par ordre d'importance réelle.
 
-### 1. On ne peut pas vous joindre
+### 1. Le domaine et les réseaux sont faux
 
-`content/site.ts` contient encore `hello@thelab.studio` et `+33 6 00 00 00 00`.
-Ces valeurs alimentent le bouton du hero, le bloc CTA, le pied de page **et** le
-repli du formulaire de contact. Tant qu'elles sont fausses, un visiteur qui veut
-vous écrire n'a aucun moyen d'y arriver.
+`content/site.ts` : `SITE_URL` vaut `https://thelab.com`, un domaine qui n'est
+pas le vôtre. Il alimente les aperçus de partage, les liens canoniques et le
+sitemap. Tant qu'il est faux, Google et LinkedIn pointent dans le vide.
 
-Dans le même fichier, `SITE_URL` vaut `https://thelab.studio` : il alimente les
-aperçus de partage, les liens canoniques et le sitemap. S'il est faux, Google et
-LinkedIn pointent dans le vide.
+Dans le même fichier, les quatre entrées de `SOCIALS` pointent vers les pages
+d'accueil d'Instagram, LinkedIn, YouTube et TikTok : il manque le nom de compte
+après la barre oblique. Un visiteur qui clique n'arrive pas sur vous.
+
+L'email et les trois numéros de téléphone, eux, sont renseignés.
 
 ### 2. Les témoignages sont inventés
 

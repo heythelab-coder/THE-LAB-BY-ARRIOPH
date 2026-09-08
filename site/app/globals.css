@@ -25,6 +25,9 @@
     --elev: 44 44 49;
     /* Hauteur de la nav en pilule + marge : sert d'offset aux ancres. */
     --nav-offset: 110px;
+    /* Dégradé du monogramme, relevé au pixel sur le fichier de marque. */
+    --mark-from: 156 190 250;
+    --mark-to: 210 223 224;
   }
 
   [data-theme="light"] {
@@ -36,6 +39,12 @@
     --fg: 12 12 14;
     --accent: 79 70 210;
     --elev: 255 255 255;
+    /* Même dégradé, assombri. Les couleurs d'origine sont deux tons très
+       clairs : sur le fond de ce thème, le bas du dégradé passerait de
+       210/223/224 à quasi invisible sur 250/250/249. Les teintes sont
+       conservées, seule la luminosité descend. */
+    --mark-from: 62 108 206;
+    --mark-to: 122 146 156;
   }
 
   /* Les blocs où du texte se pose sur une image ou un dégradé restent sombres

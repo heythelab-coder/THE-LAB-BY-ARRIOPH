@@ -48,29 +48,29 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         <ServiceList locale={locale} deliverablesLabel={copy.deliverablesLabel} />
       </section>
 
-      {/* Le hors-perimetre a autant de valeur que l'offre : il evite les
-          mauvais rendez-vous des deux cotes, et une agence qui sait dire non
-          est plus credible sur ce qu'elle dit savoir faire. */}
+      {/* Ce bloc listait des refus. Il liste desormais des engagements : meme
+          fonction — dire a quoi s'attendre avant de s'engager — mais il ouvre
+          la conversation au lieu de la fermer.
+          Le marqueur suit : la croix disait « non », le filet ne dit rien et
+          laisse la phrase parler. */}
       <section className="section container-lab">
         <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal className="border-t border-line pt-4">
-              <p className="eyebrow">{copy.excludeEyebrow}</p>
+              <p className="eyebrow">{copy.engageEyebrow}</p>
             </Reveal>
-            <RevealText as="h2" text={copy.excludeTitle} className="t-display mt-6" stagger={40} />
+            <RevealText as="h2" text={copy.engageTitle} className="t-display mt-6" stagger={40} />
             <Reveal delay={150}>
-              <p className="t-prose mt-6 max-w-[46ch] text-paper/65">{copy.excludeIntro}</p>
+              <p className="t-prose mt-6 max-w-[46ch] text-paper/65">{copy.engageIntro}</p>
             </Reveal>
           </div>
 
           <div className="md:col-span-6 md:col-start-7">
             <ul className="border-t border-line">
-              {copy.excludes.map((item, index) => (
+              {copy.engagePoints.map((item, index) => (
                 <Reveal as="li" key={item} delay={index * 70}>
-                  <div className="flex items-center gap-4 border-b border-line py-5">
-                    <span aria-hidden className="text-[18px] leading-none text-paper/25">
-                      ×
-                    </span>
+                  <div className="flex items-baseline gap-4 border-b border-line py-5">
+                    <span aria-hidden className="mt-[2px] h-px w-3 shrink-0 bg-paper/30" />
                     <span className="t-body text-paper/60">{item}</span>
                   </div>
                 </Reveal>
@@ -80,7 +80,11 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <Process dict={dict} title={copy.processTitle} />
+      {/* La methode a sa place ici, juste apres les expertises : le visiteur
+          vient de lire SUR QUOI on travaille, ce bloc dit COMMENT. Son titre
+          vient du dictionnaire — il ne s'appelle plus « Services », donc il ne
+          repete plus le nom de la page. */}
+      <Process dict={dict} />
 
       {/* Cette section porte desormais l'ancre `contact` et le chapitre : elle
           etait suivie d'un second appel a l'action, retire ici, qui les

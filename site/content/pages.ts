@@ -15,32 +15,41 @@ export const pagesFr = {
   work: {
     eyebrow: "TOUS LES PROJETS",
     title: "Projets",
+    /**
+     * L'ancienne phrase presentait chaque projet comme un lancement complet.
+     * La selection contient surtout des missions de contenu, de campagne et
+     * d'identite : autant le dire, la page detaille de toute facon le
+     * perimetre reel de chacune.
+     */
     intro:
-      "Une sélection de lancements et de projets de marque. Chacun part d'une séance d'écoute et se termine par quelque chose qui existe dans le monde réel.",
+      "Des missions de périmètres différents : identité, campagne, contenu de marque, production photo et vidéo. Chaque page indique ce qui nous a été confié, et ce qui a été livré.",
   },
   services: {
-    eyebrow: "PRESTATIONS",
-    title: "Ce qu'on fait,\net ce qu'on ne fait pas.",
+    eyebrow: "EXPERTISES",
+    title: "Cinq expertises,\nassemblées selon le projet.",
     intro:
-      "Quatre prestations, qui correspondent aux quatre temps du protocole. Elles se prennent ensemble le plus souvent, séparément quand c'est justifié. Jamais au catalogue.",
+      "Elles se combinent rarement toutes. Selon ce qui existe déjà, une mission peut aller du positionnement jusqu'à la campagne, ou se limiter à un site, une identité, un plan de contenus.",
     deliverablesLabel: "Livrables",
-    excludeEyebrow: "HORS PÉRIMÈTRE",
-    excludeTitle: "Ce qu'on ne fait pas.",
-    excludeIntro:
-      "Annoncer ses limites vaut mieux que de les découvrir en cours de route. Si votre besoin est dans cette liste, on vous le dira au premier échange et on vous orientera.",
-    excludes: [
-      "Retainer social mensuel",
-      "Régie et achat média",
-      "Production à la demande sans stratégie",
-      "Exécution d'un plan déjà écrit ailleurs",
-      "SEO de volume et netlinking",
+    /**
+     * Ce bloc listait cinq refus, dont un — le suivi social mensuel — que le
+     * studio pratique reellement. Une liste d'exclusions se perime vite et
+     * ferme des portes que rien n'oblige a fermer. Elle est remplacee par des
+     * engagements : meme fonction (dire a quoi s'attendre, eviter les mauvais
+     * rendez-vous), sans se contredire six mois plus tard.
+     */
+    engageEyebrow: "CADRE DE TRAVAIL",
+    engageTitle: "Comment on s'engage.",
+    engageIntro:
+      "Quelques principes qui valent mieux qu'une liste de refus : ils disent comment une mission se cadre, et ce que vous pouvez attendre de nous une fois qu'elle a commencé.",
+    engagePoints: [
+      "Le périmètre se décide après l'écoute, jamais avant.",
+      "Peu de projets à la fois, pour rester disponibles quand ça s'accélère.",
+      "Les mêmes personnes de la première séance à la mise en ligne.",
+      "Quand un besoin sort de notre terrain, on le dit et on oriente.",
+      "Ce qu'on livre doit pouvoir vivre sans nous.",
     ],
-    // Titre du bloc protocole sur CETTE page uniquement. Le dictionnaire
-    // l'appelle « Services », ce qui convient partout ailleurs mais repete ici
-    // le nom de la page qu'on est en train de lire.
-    processTitle: "Comment on travaille.",
-    ctaTitle: "Vous ne savez pas dans quelle case vous êtes ?",
-    ctaBody: "C'est le cas le plus fréquent. Une séance d'écoute suffit à le savoir.",
+    ctaTitle: "Vous ne savez pas par où commencer ?",
+    ctaBody: "C'est le cas le plus fréquent. Une séance d'écoute suffit à y voir clair.",
   },
   project: {
     backToWork: "Tous les projets",
@@ -49,20 +58,53 @@ export const pagesFr = {
     categoryLabel: "Discipline",
     deliverablesLabel: "Livrables",
     nextLabel: "Projet suivant",
-    ctaTitle: "Un lancement en préparation ?",
+    ctaTitle: "Un projet du même ordre ?",
     ctaButton: "Parlons-en",
   },
   studio: {
-    eyebrow: "LE LABORATOIRE",
-    title: "Un laboratoire,\npas une agence.",
+    eyebrow: "LE STUDIO",
+    /**
+     * L'ancien titre — « Un laboratoire, pas une agence » — se definissait
+     * contre les autres. Il posait aussi une frontiere que la page suivante
+     * contredisait. On garde l'esprit laboratoire, on retire l'opposition.
+     */
+    title: "Une équipe réduite,\nau contact du projet.",
     intro:
-      "THE LAB est né dans Arrioph, cabinet de transformation digitale. On y applique la discipline de la R&D : écouter, formuler une hypothèse, la tester, l'ajuster. Une équipe, un protocole, peu de projets à la fois.",
+      "On travaille avec les fondateurs et les équipes qui lancent quelque chose. Peu de projets à la fois, les mêmes personnes de la première séance à la mise en ligne, et une préférence assumée pour les décisions prises à voix haute plutôt que dévoilées à la fin.",
+    principlesEyebrow: "COMMENT ON TRAVAILLE ENSEMBLE",
+    principlesTitle: "Ce qui change,\nconcrètement.",
+    principles: [
+      {
+        label: "Celui qui écoute est celui qui produit",
+        body: "Pas de passage de dossier entre une équipe qui vend et une équipe qui exécute. Ce qui se dit en séance arrive intact dans le travail.",
+      },
+      {
+        label: "Peu de projets à la fois",
+        body: "C'est la condition pour rester joignables quand un lancement s'accélère, et pour que les délais annoncés tiennent.",
+      },
+      {
+        label: "Les décisions à voix haute",
+        body: "Vous voyez les pistes écartées autant que celles retenues, pendant le travail et non dans une présentation finale.",
+      },
+      {
+        label: "Ce qu'on livre doit vivre sans nous",
+        body: "Un système que votre équipe peut reprendre et faire évoluer, pas un fichier qu'il faut nous redemander à chaque besoin.",
+      },
+    ],
+    partnerLabel: "Avec Arrioph",
+    partnerBody:
+      "Arrioph est notre partenaire sur le conseil et les missions associées. Quand un projet dépasse la marque et touche à l'organisation ou aux outils, on s'appuie sur cette expertise plutôt que d'improviser.",
   },
   contact: {
     eyebrow: "CONTACT",
-    title: "Racontez-nous votre lancement.",
+    title: "Parlons de votre projet.",
+    /**
+     * Ce qu'on annonce ici doit correspondre exactement a ce qui se passe
+     * ensuite : une conversation, pas une etude offerte. Le diagnostic ecrit
+     * fait partie d'une mission, il n'est pas un cadeau de bienvenue.
+     */
     intro:
-      "Quelques lignes suffisent, pas besoin de brief formel. Réservez au passage une séance d'écoute : trente minutes pour comprendre votre projet, sans engagement et sans devis.",
+      "Quelques lignes suffisent, pas besoin de brief formel. Vous pouvez aussi réserver une séance d'écoute : une trentaine de minutes pour comprendre où vous en êtes, ce que vous lancez et si on est les bons pour vous accompagner. Sans engagement, et sans devis à ce stade.",
     directLabel: "Écrire directement",
     phoneLabel: "Téléphone",
     cityLabel: "Studio",
@@ -79,12 +121,13 @@ export const pagesFr = {
     emailPlaceholder: "vous@societe.com",
     company: "Société",
     companyPlaceholder: "Facultatif",
-    projectType: "Nature du lancement",
+    projectType: "Nature du projet",
     projectTypeOptions: [
       "Lancement de marque",
-      "Relancement / repositionnement",
-      "Lancement produit",
+      "Nouvelle offre ou produit",
+      "Repositionnement",
       "Nouveau marché",
+      "Site web",
       "Je ne sais pas encore",
     ],
     budget: "Ordre de grandeur",
@@ -92,7 +135,7 @@ export const pagesFr = {
     placeholderSelect: "Sélectionner",
     message: "Ce que vous construisez",
     messagePlaceholder:
-      "Où vous en êtes, ce que vous lancez, quand. Quelques lignes suffisent, on creusera ensemble.",
+      "Où vous en êtes, ce que vous préparez, pour quand. Quelques lignes suffisent, on creusera ensemble.",
     consent:
       "J'accepte que ces informations soient utilisées pour traiter ma demande. Elles ne sont ni revendues ni transmises à des tiers.",
     submit: "Envoyer la demande",
@@ -147,31 +190,27 @@ export const pagesEn: PagesCopy = {
     eyebrow: "ALL PROJECTS",
     title: "Work",
     intro:
-      "A selection of launches and brand projects. Each one starts with a listening session and ends with something that exists in the real world.",
+      "Engagements of different sizes: identity, campaign, brand content, photo and video production. Each page states what we were asked to do, and what was delivered.",
   },
   services: {
-    eyebrow: "SERVICES",
-    title: "What we do,\nand what we don't.",
+    eyebrow: "EXPERTISE",
+    title: "Five disciplines,\nassembled per project.",
     intro:
-      "Four services, matching the four stages of the protocol. Usually taken together, separately when it makes sense. Never off a catalogue.",
+      "They rarely all come together. Depending on what already exists, an engagement can run from positioning through to campaign, or stop at a site, an identity, a content plan.",
     deliverablesLabel: "Deliverables",
-    excludeEyebrow: "OUT OF SCOPE",
-    excludeTitle: "What we don't do.",
-    excludeIntro:
-      "Naming your limits beats discovering them mid-project. If your need is on this list, we'll say so in the first conversation and point you elsewhere.",
-    excludes: [
-      "Monthly social retainer",
-      "Media buying",
-      "On-demand production without strategy",
-      "Executing a plan written elsewhere",
-      "Volume SEO and link building",
+    engageEyebrow: "HOW WE ENGAGE",
+    engageTitle: "What you can expect.",
+    engageIntro:
+      "A few commitments, worth more than a list of refusals: they say how an engagement gets framed, and what you can expect from us once it has started.",
+    engagePoints: [
+      "Scope is decided after the listening session, never before.",
+      "Few projects at a time, so we stay reachable when things speed up.",
+      "The same people from the first session to going live.",
+      "When a need falls outside our ground, we say so and point elsewhere.",
+      "What we hand over has to work without us.",
     ],
-    // Titre du bloc protocole sur CETTE page uniquement. Le dictionnaire
-    // l'appelle « Services », ce qui convient partout ailleurs mais repete ici
-    // le nom de la page qu'on est en train de lire.
-    processTitle: "How we work.",
-    ctaTitle: "Not sure which box you're in?",
-    ctaBody: "That's the most common case. One listening session is enough to find out.",
+    ctaTitle: "Not sure where to start?",
+    ctaBody: "That's the most common case. One listening session is usually enough.",
   },
   project: {
     backToWork: "All projects",
@@ -180,20 +219,43 @@ export const pagesEn: PagesCopy = {
     categoryLabel: "Discipline",
     deliverablesLabel: "Deliverables",
     nextLabel: "Next project",
-    ctaTitle: "A launch in the works?",
+    ctaTitle: "Something similar in the works?",
     ctaButton: "Let's talk",
   },
   studio: {
-    eyebrow: "THE LABORATORY",
-    title: "A laboratory,\nnot an agency.",
+    eyebrow: "THE STUDIO",
+    title: "A small team,\nclose to the work.",
     intro:
-      "THE LAB was born inside Arrioph, a digital transformation firm. We apply the discipline of R&D: listen, form a hypothesis, test it, adjust. One team, one protocol, few projects at a time.",
+      "We work with founders and teams launching something. Few projects at a time, the same people from the first session to going live, and a deliberate preference for decisions made out loud rather than unveiled at the end.",
+    principlesEyebrow: "HOW WE WORK TOGETHER",
+    principlesTitle: "What that changes,\nin practice.",
+    principles: [
+      {
+        label: "The people who listen are the people who build",
+        body: "No handover between a team that sells and a team that executes. What gets said in the session arrives intact in the work.",
+      },
+      {
+        label: "Few projects at a time",
+        body: "That's what keeps us reachable when a launch speeds up, and what makes the dates we give you hold.",
+      },
+      {
+        label: "Decisions made out loud",
+        body: "You see the routes we drop as clearly as the ones we keep, during the work rather than in a final presentation.",
+      },
+      {
+        label: "What we hand over has to work without us",
+        body: "A system your team can pick up and extend, not a file you have to ask us for every time.",
+      },
+    ],
+    partnerLabel: "With Arrioph",
+    partnerBody:
+      "Arrioph is our partner on consulting and the work that comes with it. When a project reaches past the brand into the organisation or the tooling, we lean on that expertise instead of improvising.",
   },
   contact: {
     eyebrow: "CONTACT",
-    title: "Tell us about your launch.",
+    title: "Let's talk about your project.",
     intro:
-      "A few lines are enough, no formal brief needed. Book a listening session while you're here: thirty minutes to understand your project, no commitment and no quote.",
+      "A few lines are enough, no formal brief needed. You can also book a listening session: about thirty minutes to understand where you are, what you're launching and whether we're the right people for it. No commitment, and no quote at this stage.",
     directLabel: "Email directly",
     phoneLabel: "Phone",
     cityLabel: "Studio",
@@ -210,12 +272,13 @@ export const pagesEn: PagesCopy = {
     emailPlaceholder: "you@company.com",
     company: "Company",
     companyPlaceholder: "Optional",
-    projectType: "Kind of launch",
+    projectType: "Kind of project",
     projectTypeOptions: [
       "Brand launch",
-      "Relaunch / repositioning",
-      "Product launch",
+      "New offer or product",
+      "Repositioning",
       "New market",
+      "Website",
       "Not sure yet",
     ],
     budget: "Ballpark",
@@ -223,7 +286,7 @@ export const pagesEn: PagesCopy = {
     placeholderSelect: "Select",
     message: "What you're building",
     messagePlaceholder:
-      "Where you are, what you're launching, when. A few lines are enough, we'll dig in together.",
+      "Where you are, what you're preparing, and by when. A few lines are enough, we'll dig in together.",
     consent:
       "I agree to these details being used to handle my request. They are never sold or passed to third parties.",
     submit: "Send request",

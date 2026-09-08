@@ -8,8 +8,11 @@ import type { Dictionary, Locale } from "@/content/dictionary";
 export default function Work({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const total = String(PROJECTS.length).padStart(2, "0");
 
+  // Le libelle du rail vient de `chapters`, comme toutes les autres sections.
+  // Il passait par `work.title`, qui donne le meme mot mais contournait le
+  // groupe prevu pour ca — et laissait `chapters.work` orpheline.
   return (
-    <section id="work" data-chapter={dict.work.title} className="section container-lab">
+    <section id="work" data-chapter={dict.chapters.work} className="section container-lab">
       <SectionHeader
         eyebrow={dict.work.eyebrow}
         title={dict.work.title}
