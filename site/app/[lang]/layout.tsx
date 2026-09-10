@@ -37,7 +37,7 @@ export async function generateMetadata({
     title: {
       default: dict.meta.title,
       // Les pages internes n'ont qu'a fournir leur propre titre.
-      template: `%s — 4Lab`,
+      template: `%s · 4Lab`,
     },
     description: dict.meta.description,
     openGraph: {

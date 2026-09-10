@@ -6,9 +6,9 @@ export type Dictionary = typeof fr;
 
 export const fr = {
   meta: {
-    title: "4Lab — Laboratoire de lancement de marque",
+    title: "4Lab, laboratoire de lancement de marque",
     description:
-      "Stratégie, identité, digital et contenus pour les marques qui se lancent et pour celles qui ouvrent un nouveau chapitre.",
+      "On construit des marques : le nom, l'image, le site, les photos et les films. Pour ceux qui se lancent, et pour ceux qui ouvrent un nouveau chapitre.",
   },
   nav: {
     work: "Projets",
@@ -26,10 +26,10 @@ export const fr = {
     // ce qu'on fait, sinon le visiteur repart avec une jolie phrase et
     // aucune idée de ce qu'il peut nous demander.
     subtitle:
-      "On donne forme aux projets qui commencent et aux marques qui ouvrent un nouveau chapitre. Stratégie, identité, digital et contenus : une même équipe pour relier les décisions à leur mise en œuvre.",
+      "On construit des marques, de la première idée jusqu'à ce qui se voit : le nom, l'image, le site, les photos, les films. Les mêmes personnes décident et fabriquent.",
     primary: "Parlons de votre projet",
     secondary: "Voir les projets",
-    tagline: "Laboratoire de lancement, par Arrioph",
+    tagline: "Laboratoire de lancement de marque",
     scroll: "Faire défiler",
   },
   entrance: {
@@ -45,7 +45,7 @@ export const fr = {
   approach: {
     eyebrow: "CE QU'ON FAIT",
     title: "Là où une marque\nprend forme.",
-    p1: "Un lancement, une offre qui s'ouvre, un marché qu'on aborde : ce sont des moments où beaucoup de décisions se prennent en même temps, et où elles se tiennent ou s'annulent entre elles. On les prend avec vous, puis on les met en œuvre.",
+    p1: "Se lancer, sortir une nouvelle offre, attaquer un marché : tout se décide en quelques semaines, et une décision de travers en abîme trois autres. On les prend avec vous, et c'est nous qui fabriquons derrière.",
     /**
      * Trois situations plutôt qu'une liste de prestations : le visiteur se
      * reconnaît dans un moment, pas dans un intitulé de service. C'est aussi
@@ -55,21 +55,21 @@ export const fr = {
     situations: [
       {
         label: "Construire et lancer une marque",
-        body: "Vous partez d'un projet, parfois d'un nom. On pose le positionnement, l'identité et la présence qui vont avec.",
+        body: "Vous partez d'une idée, parfois d'un nom. On trouve ce que vous défendez, on lui dessine un visage, et on le met en ligne.",
       },
       {
         label: "Lancer une nouvelle offre",
-        body: "La marque existe déjà. Il faut faire une place à la nouveauté sans abîmer ce qui fonctionne.",
+        body: "La marque tourne déjà. Il faut faire de la place au nouveau sans casser ce qui marche.",
       },
       {
         label: "Ouvrir un nouveau chapitre",
-        body: "Nouveau marché, nouveau public, nouvelle étape. On reprend le positionnement là où il coince et on réaligne le reste.",
+        body: "Nouveau marché, nouveau public, changement d'échelle. On reprend ce qui coince, on garde ce qui tient.",
       },
     ],
     outcome:
-      "Ce que ça donne : une offre qu'on comprend en une phrase, des efforts concentrés au bon endroit, une présence cohérente d'un support à l'autre, et de quoi aborder vos premiers clients sans improviser.",
+      "Au bout : on comprend ce que vous vendez en une phrase, votre marque se reconnaît d'une affiche à un post, et vous avez de quoi parler à vos premiers clients sans bricoler.",
     name: "4Lab",
-    role: "Laboratoire de lancement, par Arrioph",
+    role: "Laboratoire de lancement de marque",
   },
   clients: {
     eyebrow: "CLIENTS & PARTENAIRES",
@@ -83,7 +83,7 @@ export const fr = {
     view: "Voir",
   },
   quote:
-    "Ce qui tient une marque, ce n'est pas le logo, ce sont les décisions prises avant lui. On écoute d'abord, on décide ensuite, on produit une fois que c'est clair, puis on regarde ce que le marché en fait.",
+    "Un logo ne sauve pas une marque. Ce qui la tient, ce sont les décisions prises avant de dessiner quoi que ce soit. On écoute, on tranche, on fabrique, puis on regarde ce que les gens en font.",
   process: {
     eyebrow: "MÉTHODE",
     // La méthode et les expertises sont deux choses différentes. Ce bloc
@@ -100,20 +100,20 @@ export const fr = {
       {
         n: "02",
         title: "Diagnostic",
-        body: "On cherche ce qui est réellement en jeu : le marché, la concurrence, ce que votre audience croit déjà, ce qui tient déjà chez vous. Cette lecture ouvre la mission et sert de base à tout ce qui suit.",
-        tags: ["Lecture de marché", "Concurrence", "Enjeu réel"],
+        body: "On regarde le terrain : qui vend la même chose, à quel prix, avec quels arguments, et ce que vos clients pensent déjà de vous. C'est là-dessus qu'on s'appuie ensuite, pas sur une intuition.",
+        tags: ["Terrain", "Concurrence", "Ce qui est en jeu"],
       },
       {
         n: "03",
         title: "Formulation",
-        body: "On construit avec vous ce qui doit l'être : positionnement, récit, nom, identité. Par itérations courtes, à voix haute. Vous voyez les pistes écartées autant que celles retenues.",
-        tags: ["Positionnement", "Récit", "Identité", "Nom"],
+        body: "On écrit ce que vous défendez, on choisit un nom s'il en faut un, on dessine l'image qui va avec. On montre tôt, souvent, et à voix haute. Vous voyez les pistes qu'on jette autant que celles qu'on garde.",
+        tags: ["Nom", "Ce que vous défendez", "Identité"],
       },
       {
         n: "04",
         title: "Lancement",
-        body: "On met la marque au monde : site, contenus, campagne. Puis on regarde ce que le marché en fait, et on ajuste. Un lancement n'est pas une livraison, c'est un début.",
-        tags: ["Campagne", "Présence digitale", "Contenus"],
+        body: "On met en ligne, on tourne les images, on lance la campagne. Puis on regarde ce qui prend et ce qui ne prend pas, et on ajuste. Un lancement n'est pas une livraison, c'est un début.",
+        tags: ["Site", "Photo et vidéo", "Campagne"],
       },
     ],
   },
@@ -123,15 +123,15 @@ export const fr = {
     items: [
       {
         q: "Vous faites quoi, exactement ?",
-        a: "Stratégie et positionnement, identité de marque, présence digitale, contenus et activation. Le tout autour d'un projet qui se lance ou qui change d'échelle. Selon votre point de départ, on prend l'ensemble ou seulement ce qui manque.",
+        a: "On trouve ce que votre marque défend, on lui dessine une image, on construit le site, et on produit les photos, les films et les publications qui la font exister. Selon d'où vous partez, on prend tout ou juste ce qui manque.",
       },
       {
         q: "À qui ça s'adresse ?",
-        a: "Beaucoup de fondateurs et de jeunes structures, parce que c'est là que tout se décide en même temps. Et des entreprises installées qui lancent une offre, ouvrent un marché ou passent une étape. Le point commun n'est pas la taille, c'est le moment.",
+        a: "Beaucoup de fondateurs et de jeunes boîtes, parce que c'est là que tout se joue d'un coup. Et des entreprises installées qui sortent une offre, attaquent un marché ou changent d'échelle. Ce n'est pas une question de taille, c'est une question de moment.",
       },
       {
         q: "Faut-il tout refaire pour travailler avec vous ?",
-        a: "Non. Certaines missions reprennent la marque depuis le positionnement, d'autres se limitent à un site, une identité ou une campagne. On commence par regarder ce qui tient déjà, et on ne rouvre que ce qui bloque.",
+        a: "Non. Parfois on reprend la marque depuis le début, parfois on fait juste un site, une identité ou une campagne. On commence par regarder ce qui tient, et on ne touche qu'à ce qui bloque.",
       },
       {
         q: "Comment se passe le premier échange ?",
@@ -139,18 +139,18 @@ export const fr = {
       },
       {
         q: "Combien ça coûte ?",
-        a: "Ça dépend de ce qu'on lance et de ce qui existe déjà. Le périmètre se décide ensemble après le premier échange, et le chiffrage porte sur ce périmètre-là, pas sur un catalogue de prestations.",
+        a: "Ça dépend de ce qu'on lance et de ce qui existe déjà. On décide ensemble de ce qu'on fait après le premier échange, et le prix porte là-dessus, pas sur un catalogue.",
       },
       {
         q: "Qu'est-ce qu'Arrioph apporte ?",
-        a: "Arrioph est notre partenaire sur le conseil et les missions associées. Quand un projet dépasse la marque et touche à l'organisation ou aux outils, on s'appuie sur cette expertise plutôt que d'improviser.",
+        a: "Arrioph est notre partenaire sur le conseil. Quand un projet dépasse la marque et touche à l'organisation ou aux outils, on s'appuie sur eux plutôt que de faire semblant.",
       },
     ],
   },
   cta: {
     eyebrow: "PROCHAINE ÉTAPE",
     availability: "Prochaine disponibilité :",
-    title: "Parlons de ce que vous construisez.",
+    title: "Racontez-nous ce que vous construisez.",
     body: "Pas besoin de brief. Une séance d'écoute d'une trentaine de minutes, sans engagement, pour comprendre où vous en êtes et si on peut aider.",
     button: "Parlons de votre projet",
   },
@@ -160,7 +160,7 @@ export const fr = {
     contactLabel: "Contact",
     rights: "Tous droits réservés.",
     blurb:
-      "Stratégie, identité, digital et contenus pour les marques qui se lancent et pour celles qui ouvrent un nouveau chapitre.",
+      "On construit des marques : le nom, l'image, le site, les photos et les films. Pour ceux qui se lancent, et pour ceux qui ouvrent un nouveau chapitre.",
     backToTop: "Haut de page ↑",
     pages: [
       { label: "Accueil", href: "" },
@@ -174,9 +174,9 @@ export const fr = {
 
 export const en: Dictionary = {
   meta: {
-    title: "4Lab — Brand launch lab",
+    title: "4Lab, brand launch lab",
     description:
-      "Strategy, identity, digital and content for brands being launched and for brands opening a new chapter.",
+      "We build brands: the name, the look, the site, the photos and the films. For people starting out, and for those opening a new chapter.",
   },
   nav: {
     work: "Work",
@@ -191,10 +191,10 @@ export const en: Dictionary = {
     line1: "Brands aren't born.",
     line2: "They're formulated.",
     subtitle:
-      "We give shape to projects that are starting out and to brands opening a new chapter. Strategy, identity, digital and content: one team connecting the decisions to the work that follows them.",
+      "We build brands, from the first idea to the thing people actually see: the name, the look, the site, the photos, the films. The same people decide and make.",
     primary: "Let's talk about your project",
     secondary: "View work",
-    tagline: "Brand launch lab, by Arrioph",
+    tagline: "Brand launch lab",
     scroll: "Scroll",
   },
   entrance: {
@@ -210,25 +210,25 @@ export const en: Dictionary = {
   approach: {
     eyebrow: "WHAT WE DO",
     title: "Where a brand\ntakes shape.",
-    p1: "A launch, a new offer, a market you're stepping into: these are moments when a lot of decisions get made at once, and where they either hold together or cancel each other out. We make them with you, then we build them.",
+    p1: "Launching, putting out a new offer, going after a market: it all gets decided in a few weeks, and one decision off course wrecks three others. We make them with you, and we build what comes after.",
     situations: [
       {
         label: "Build and launch a brand",
-        body: "You start with a project, sometimes a name. We set the positioning, the identity and the presence that go with it.",
+        body: "You start with an idea, sometimes a name. We work out what you stand for, give it a face, and put it online.",
       },
       {
         label: "Launch a new offer",
-        body: "The brand already exists. The new thing needs its own room without damaging what already works.",
+        body: "The brand is already running. The new thing needs room without breaking what works.",
       },
       {
         label: "Open a new chapter",
-        body: "New market, new audience, new stage. We reopen the positioning where it strains and realign the rest.",
+        body: "New market, new crowd, a change of scale. We reopen what is stuck and keep what holds.",
       },
     ],
     outcome:
-      "What that gives you: an offer people grasp in one sentence, effort concentrated where it counts, a presence that holds from one surface to the next, and enough to meet your first customers without improvising.",
+      "At the end: people get what you sell in one sentence, your brand is recognisable from a poster to a post, and you have enough to talk to your first customers without winging it.",
     name: "4Lab",
-    role: "Brand launch lab, by Arrioph",
+    role: "Brand launch lab",
   },
   clients: {
     eyebrow: "CLIENTS & PARTNERS",
@@ -242,7 +242,7 @@ export const en: Dictionary = {
     view: "View",
   },
   quote:
-    "What holds a brand together isn't the logo, it's the decisions made before it. We listen first, decide next, produce once it's clear, then watch what the market does with it.",
+    "A logo does not save a brand. What holds it together are the decisions made before anyone draws anything. We listen, we decide, we make, then we watch what people do with it.",
   process: {
     eyebrow: "METHOD",
     title: "How we work.",
@@ -256,20 +256,20 @@ export const en: Dictionary = {
       {
         n: "02",
         title: "Diagnostic",
-        body: "We look for what's actually at stake: the market, the competition, what your audience already believes, what already works on your side. This reading opens the engagement and grounds everything after it.",
-        tags: ["Market reading", "Competition", "Real stakes"],
+        body: "We look at the ground: who sells the same thing, at what price, with what arguments, and what your customers already think of you. That is what we build on, not a hunch.",
+        tags: ["Legwork", "Competition", "What is at stake"],
       },
       {
         n: "03",
         title: "Formulation",
-        body: "We build what needs building, with you: positioning, story, name, identity. Short iterations, out loud. You see the routes we drop as clearly as the ones we keep.",
-        tags: ["Positioning", "Story", "Identity", "Naming"],
+        body: "We write down what you stand for, pick a name if you need one, and draw the look that goes with it. We show early, often, and out loud. You see the routes we bin as clearly as the ones we keep.",
+        tags: ["Name", "What you stand for", "Identity"],
       },
       {
         n: "04",
         title: "Release",
-        body: "We put the brand into the world: site, content, campaign. Then we watch what the market does with it, and adjust. A launch isn't a delivery, it's a beginning.",
-        tags: ["Campaign", "Digital presence", "Content"],
+        body: "We put it online, shoot the images, run the campaign. Then we watch what lands and what does not, and adjust. A launch is not a delivery, it is a start.",
+        tags: ["Site", "Photo and video", "Campaign"],
       },
     ],
   },
@@ -279,15 +279,15 @@ export const en: Dictionary = {
     items: [
       {
         q: "What exactly do you do?",
-        a: "Strategy and positioning, brand identity, digital presence, content and activation. All of it around a project that's launching or changing gear. Depending on where you start, we take the whole thing or only what's missing.",
+        a: "We work out what your brand stands for, give it a look, build the site, and produce the photos, films and posts that make it exist day to day. Depending on where you start, we take all of it or just what is missing.",
       },
       {
         q: "Who is it for?",
-        a: "Plenty of founders and young companies, because that's where everything gets decided at once. And established companies launching an offer, entering a market or reaching a new stage. The common thread isn't size, it's timing.",
+        a: "Plenty of founders and young companies, because that is where everything lands at once. And established companies putting out an offer, going after a market or changing scale. It is not about size, it is about timing.",
       },
       {
         q: "Do we have to redo everything to work with you?",
-        a: "No. Some engagements reopen the brand from the positioning up, others stop at a site, an identity or a campaign. We start by looking at what already holds, and only reopen what's in the way.",
+        a: "No. Sometimes we rebuild the brand from scratch, sometimes we just do a site, an identity or a campaign. We start by looking at what holds, and only touch what is in the way.",
       },
       {
         q: "What does the first conversation look like?",
@@ -295,11 +295,11 @@ export const en: Dictionary = {
       },
       {
         q: "What does it cost?",
-        a: "It depends on what's being launched and what already exists. Scope is decided together after the first conversation, and the pricing covers that scope, not a catalogue of services.",
+        a: "It depends on what is being launched and what already exists. We decide together what we are doing after the first conversation, and the price covers that, not a list of services.",
       },
       {
         q: "What does Arrioph bring?",
-        a: "Arrioph is our partner on consulting and the work that comes with it. When a project reaches past the brand into the organisation or the tooling, we lean on that expertise instead of improvising.",
+        a: "Arrioph is our partner on consulting. When a project reaches past the brand into how the company runs or what it runs on, we lean on them instead of pretending.",
       },
     ],
   },
@@ -316,7 +316,7 @@ export const en: Dictionary = {
     contactLabel: "Contact",
     rights: "All rights reserved.",
     blurb:
-      "Strategy, identity, digital and content for brands being launched and for brands opening a new chapter.",
+      "We build brands: the name, the look, the site, the photos and the films. For people starting out, and for those opening a new chapter.",
     backToTop: "Back to top ↑",
     pages: [
       { label: "Home", href: "" },

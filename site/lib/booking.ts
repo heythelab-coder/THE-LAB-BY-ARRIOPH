@@ -34,7 +34,16 @@ export const BOOKING = {
     "16:30",
     "17:00",
   ],
-  timezone: "Europe/Paris",
+  /**
+   * Fuseau de reference des creneaux. Les horaires sont des chaines simples,
+   * sans conversion : ce champ dit dans QUEL fuseau il faut les lire, et c'est
+   * lui que l'interface affiche. Casablanca plutot que Paris parce que c'est la
+   * premiere ville annoncee, ce sont les premiers numeros, et le Maroc ne change
+   * pas d'heure — donc l'ecart avec Paris varie d'une heure selon la saison, et
+   * annoncer Paris ferait arriver un client marocain a la mauvaise heure la
+   * moitie de l'annee.
+   */
+  timezone: "Africa/Casablanca",
 } as const;
 
 const DAY_MS = 24 * 60 * 60 * 1000;

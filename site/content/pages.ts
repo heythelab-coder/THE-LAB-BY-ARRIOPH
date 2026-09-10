@@ -22,14 +22,14 @@ export const pagesFr = {
      * perimetre reel de chacune.
      */
     intro:
-      "Des missions de périmètres différents : identité, campagne, contenu de marque, production photo et vidéo. Chaque page indique ce qui nous a été confié, et ce qui a été livré.",
+      "Des projets de tailles différentes : identité, campagne, contenu de marque, photo et vidéo. Chaque page dit ce qu'on nous a demandé, et ce qu'on a rendu.",
   },
   services: {
-    eyebrow: "EXPERTISES",
-    title: "Cinq expertises,\nassemblées selon le projet.",
+    eyebrow: "CE QU'ON FAIT",
+    title: "Cinq métiers,\nassemblés selon le projet.",
     intro:
-      "Elles se combinent rarement toutes. Selon ce qui existe déjà, une mission peut aller du positionnement jusqu'à la campagne, ou se limiter à un site, une identité, un plan de contenus.",
-    deliverablesLabel: "Livrables",
+      "On les prend rarement tous. Selon ce qui existe déjà, un projet peut aller de la stratégie jusqu'à la campagne, ou se limiter à un site, une identité, un calendrier de contenus.",
+    deliverablesLabel: "Ce que vous recevez",
     /**
      * Ce bloc listait cinq refus, dont un — le suivi social mensuel — que le
      * studio pratique reellement. Une liste d'exclusions se perime vite et
@@ -40,9 +40,9 @@ export const pagesFr = {
     engageEyebrow: "CADRE DE TRAVAIL",
     engageTitle: "Comment on s'engage.",
     engageIntro:
-      "Quelques principes qui valent mieux qu'une liste de refus : ils disent comment une mission se cadre, et ce que vous pouvez attendre de nous une fois qu'elle a commencé.",
+      "Quelques principes qui valent mieux qu'une liste de refus : ils disent comment on cadre un projet, et ce que vous pouvez attendre de nous une fois qu'il a commencé.",
     engagePoints: [
-      "Le périmètre se décide après l'écoute, jamais avant.",
+      "Ce qu'on fait se décide après l'écoute, jamais avant.",
       "Peu de projets à la fois, pour rester disponibles quand ça s'accélère.",
       "Les mêmes personnes de la première séance à la mise en ligne.",
       "Quand un besoin sort de notre terrain, on le dit et on oriente.",
@@ -55,8 +55,8 @@ export const pagesFr = {
     backToWork: "Tous les projets",
     clientLabel: "Client",
     yearLabel: "Année",
-    categoryLabel: "Discipline",
-    deliverablesLabel: "Livrables",
+    categoryLabel: "Métier",
+    deliverablesLabel: "Ce qu'on a rendu",
     nextLabel: "Projet suivant",
     ctaTitle: "Un projet du même ordre ?",
     ctaButton: "Parlons-en",
@@ -93,7 +93,7 @@ export const pagesFr = {
     ],
     partnerLabel: "Avec Arrioph",
     partnerBody:
-      "Arrioph est notre partenaire sur le conseil et les missions associées. Quand un projet dépasse la marque et touche à l'organisation ou aux outils, on s'appuie sur cette expertise plutôt que d'improviser.",
+      "Arrioph est notre partenaire sur le conseil. Quand un projet dépasse la marque et touche à l'organisation ou aux outils, on s'appuie sur eux plutôt que de faire semblant.",
   },
   contact: {
     eyebrow: "CONTACT",
@@ -104,7 +104,7 @@ export const pagesFr = {
      * fait partie d'une mission, il n'est pas un cadeau de bienvenue.
      */
     intro:
-      "Quelques lignes suffisent, pas besoin de brief formel. Vous pouvez aussi réserver une séance d'écoute : une trentaine de minutes pour comprendre où vous en êtes, ce que vous lancez et si on est les bons pour vous accompagner. Sans engagement, et sans devis à ce stade.",
+      "Quelques lignes suffisent, pas besoin de brief formel. Vous pouvez aussi réserver une séance d'écoute : une trentaine de minutes pour comprendre où vous en êtes, ce que vous lancez et si on est les bons pour le faire. Sans engagement, et sans devis à ce stade.",
     directLabel: "Écrire directement",
     phoneLabel: "Téléphone",
     cityLabel: "Studio",
@@ -125,13 +125,13 @@ export const pagesFr = {
     projectTypeOptions: [
       "Lancement de marque",
       "Nouvelle offre ou produit",
-      "Repositionnement",
+      "Refonte de la marque",
       "Nouveau marché",
       "Site web",
       "Je ne sais pas encore",
     ],
     budget: "Ordre de grandeur",
-    budgetOptions: ["À définir ensemble", "< 5 000 €", "5 000 – 15 000 €", "15 000 – 40 000 €", "> 40 000 €"],
+    budgetOptions: ["À définir ensemble", "Moins de 5 000 €", "5 000 à 15 000 €", "15 000 à 40 000 €", "Plus de 40 000 €"],
     placeholderSelect: "Sélectionner",
     message: "Ce que vous construisez",
     messagePlaceholder:
@@ -166,7 +166,7 @@ export const pagesFr = {
   booking: {
     dateLabel: "Date souhaitée",
     slotLabel: "Créneau",
-    slotHint: "Heure de Paris",
+    slotHint: "Heure de Casablanca (UTC+1)",
     noDate: "Sélectionnez d'abord une date.",
     clear: "Effacer",
     previousMonth: "Mois précédent",
@@ -190,20 +190,20 @@ export const pagesEn: PagesCopy = {
     eyebrow: "ALL PROJECTS",
     title: "Work",
     intro:
-      "Engagements of different sizes: identity, campaign, brand content, photo and video production. Each page states what we were asked to do, and what was delivered.",
+      "Projects of different sizes: identity, campaign, brand content, photo and film. Each page says what we were asked to do, and what we handed over.",
   },
   services: {
-    eyebrow: "EXPERTISE",
-    title: "Five disciplines,\nassembled per project.",
+    eyebrow: "WHAT WE DO",
+    title: "Five crafts,\nassembled per project.",
     intro:
-      "They rarely all come together. Depending on what already exists, an engagement can run from positioning through to campaign, or stop at a site, an identity, a content plan.",
-    deliverablesLabel: "Deliverables",
+      "We rarely take all five. Depending on what already exists, a project can run from strategy through to campaign, or stop at a site, an identity, a publishing calendar.",
+    deliverablesLabel: "What you get",
     engageEyebrow: "HOW WE ENGAGE",
     engageTitle: "What you can expect.",
     engageIntro:
-      "A few commitments, worth more than a list of refusals: they say how an engagement gets framed, and what you can expect from us once it has started.",
+      "A few commitments, worth more than a list of refusals: they say how we frame a project, and what you can expect from us once it has started.",
     engagePoints: [
-      "Scope is decided after the listening session, never before.",
+      "What we do is decided after the listening session, never before.",
       "Few projects at a time, so we stay reachable when things speed up.",
       "The same people from the first session to going live.",
       "When a need falls outside our ground, we say so and point elsewhere.",
@@ -216,8 +216,8 @@ export const pagesEn: PagesCopy = {
     backToWork: "All projects",
     clientLabel: "Client",
     yearLabel: "Year",
-    categoryLabel: "Discipline",
-    deliverablesLabel: "Deliverables",
+    categoryLabel: "Craft",
+    deliverablesLabel: "What we handed over",
     nextLabel: "Next project",
     ctaTitle: "Something similar in the works?",
     ctaButton: "Let's talk",
@@ -249,7 +249,7 @@ export const pagesEn: PagesCopy = {
     ],
     partnerLabel: "With Arrioph",
     partnerBody:
-      "Arrioph is our partner on consulting and the work that comes with it. When a project reaches past the brand into the organisation or the tooling, we lean on that expertise instead of improvising.",
+      "Arrioph is our partner on consulting. When a project reaches past the brand into how the company runs or what it runs on, we lean on them instead of pretending.",
   },
   contact: {
     eyebrow: "CONTACT",
@@ -282,7 +282,7 @@ export const pagesEn: PagesCopy = {
       "Not sure yet",
     ],
     budget: "Ballpark",
-    budgetOptions: ["To define together", "< €5,000", "€5,000 – 15,000", "€15,000 – 40,000", "> €40,000"],
+    budgetOptions: ["To define together", "Under €5,000", "€5,000 to 15,000", "€15,000 to 40,000", "Over €40,000"],
     placeholderSelect: "Select",
     message: "What you're building",
     messagePlaceholder:
@@ -317,7 +317,7 @@ export const pagesEn: PagesCopy = {
   booking: {
     dateLabel: "Preferred date",
     slotLabel: "Time slot",
-    slotHint: "Paris time",
+    slotHint: "Casablanca time (UTC+1)",
     noDate: "Pick a date first.",
     clear: "Clear",
     previousMonth: "Previous month",

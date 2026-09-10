@@ -3,7 +3,7 @@
 
 // URL de production — sert de base aux métadonnées Open Graph, au sitemap
 // et aux liens canoniques. À changer au moment du déploiement.
-export const SITE_URL = "https://thelab.com";
+export const SITE_URL = "https://4lab.arrioph.com";
 
 export const CONTACT = {
   email: "thelab@arrioph.com",
@@ -17,6 +17,12 @@ export const CONTACT = {
    * chaque affichage, et pour eviter qu'un espace mal place casse un appel.
    */
   phones: [
+    // Le Maroc d'abord : c'est le marche principal, et l'adresse ci-dessus
+    // annonce Casablanca en premier.
+    // Saisi 0669866831 en composition locale ; le zero initial ne vaut qu'au
+    // Maroc, un appel depuis l'etranger ne passerait pas. La forme composable
+    // le remplace donc par l'indicatif pays.
+    { label: "Maroc", display: "+212 6 69 86 68 31", href: "+212669866831" },
     { label: "France", display: "+33 6 66 11 12 91", href: "+33666111291" },
   ],
 };

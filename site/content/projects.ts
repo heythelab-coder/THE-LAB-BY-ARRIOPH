@@ -44,17 +44,17 @@ export const PROJECTS: Project[] = [
     fr: {
       title: "Red Bull Morocco",
       category: "Contenu de marque",
-      desc: "Couverture photo et contenu social d'une activation communautaire.",
+      desc: "Couverture photo et contenu social d'un événement communautaire.",
       intro:
-        "Une activation communautaire à couvrir en direct, avec des contenus attendus dans les heures qui suivent. Notre part : la captation et le montage, pensés pour le format vertical dès la prise de vue. L'objectif n'était pas de documenter l'événement mais d'en restituer l'ambiance, en cadrant au ras du public plutôt qu'en surplomb.",
+        "Un événement communautaire à couvrir en direct, avec des contenus attendus dans les heures qui suivent. Notre part : la captation et le montage, pensés pour le format vertical dès la prise de vue. L'objectif n'était pas de documenter l'événement mais d'en restituer l'ambiance, en cadrant au ras du public plutôt qu'en surplomb.",
       deliverables: ["Photo d'événement", "Contenu social", "Montage court", "Livraison 48 h"],
     },
     en: {
       title: "Red Bull Morocco",
       category: "Brand content",
-      desc: "Photo coverage and social content for a community activation.",
+      desc: "Photo coverage and social content for a community event.",
       intro:
-        "A community activation to cover live, with content expected within hours. Our part: the shoot and the edit, framed for vertical from the first frame. The goal was not to document the event but to carry its atmosphere, shooting level with the crowd rather than above it.",
+        "A community event to cover live, with content expected within hours. Our part: the shoot and the edit, framed for vertical from the first frame. The goal was not to document the event but to carry its atmosphere, shooting level with the crowd rather than above it.",
       deliverables: ["Event photography", "Social content", "Short edits", "48h delivery"],
     },
   },
@@ -90,17 +90,17 @@ export const PROJECTS: Project[] = [
     fr: {
       title: "Le Temple",
       category: "Film de marque",
-      desc: "Film de mode et mise en scène du dispositif de diffusion.",
+      desc: "Film de mode et mise en scène de l'écran qui le diffuse.",
       intro:
-        "Un film de mode destiné à un dispositif de diffusion grand format, dans un lieu où le visiteur passe plutôt qu'il ne s'assoit. Notre part : la direction artistique, la réalisation et le montage, conçus avec le support. Cadrage, rythme du montage et échelle typographique répondent à la distance de lecture réelle.",
+        "Un film de mode fait pour un écran grand format installé sur place, dans un lieu où le visiteur passe plutôt qu'il ne s'assoit. Notre part : la direction artistique, la réalisation et le montage, conçus avec le support. Cadrage, rythme du montage et échelle typographique répondent à la distance de lecture réelle.",
       deliverables: ["Direction artistique", "Réalisation", "Montage", "Installation"],
     },
     en: {
       title: "Le Temple",
       category: "Brand film",
-      desc: "Fashion film and staging of the screening installation.",
+      desc: "Fashion film and staging of the screen that shows it.",
       intro:
-        "A fashion film built for a large-format screening setup, in a space where people walk past rather than sit down. Our part: art direction, filming and edit, designed alongside the display itself. Framing, edit rhythm and type scale all answer to the viewer's actual reading distance.",
+        "A fashion film made for a large screen installed on site, in a space where people walk past rather than sit down. Our part: art direction, filming and edit, designed alongside the display itself. Framing, edit rhythm and type scale all answer to the viewer's actual reading distance.",
       deliverables: ["Art direction", "Direction", "Edit", "Installation"],
     },
   },
@@ -115,8 +115,8 @@ export const PROJECTS: Project[] = [
       category: "Événementiel",
       desc: "Identité et affiche de campagne pour l'édition Marrakech.",
       intro:
-        "Une édition à installer à Marrakech, avec une identité à tenir de l'affiche jusqu'à la signalétique sur place. Notre part : l'identité de l'événement et ses déclinaisons. Elle repose sur un contraste simple, un ciel photographié tel quel et une écriture manuscrite posée dessus ; le décalage entre les deux registres porte le ton de l'édition.",
-      deliverables: ["Identité", "Affiche", "Déclinaisons social", "Signalétique"],
+        "Une édition à installer à Marrakech, avec une identité à tenir de l'affiche jusqu'à la signalétique sur place. Notre part : l'identité de l'événement et toutes ses versions. Elle repose sur un contraste simple, un ciel photographié tel quel et une écriture manuscrite posée dessus ; le décalage entre les deux registres porte le ton de l'édition.",
+      deliverables: ["Identité", "Affiche", "Versions réseaux", "Signalétique"],
     },
     en: {
       title: "Beyond Fears",
