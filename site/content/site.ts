@@ -39,7 +39,7 @@ export const CONTACT: {
     // Saisi 0669866831 en composition locale ; le zero initial ne vaut qu'au
     // Maroc, un appel depuis l'etranger ne passerait pas. La forme composable
     // le remplace donc par l'indicatif pays.
-    { label: "Maroc", display: "+212 6 69 86 68 31", href: "+212669866831" },
+    { label: "Maroc", display: "+212 6 69 86 68 31", href: "+212669866831", name: "Ayman Nejmi" },
     // Saisi +212 663-412412 : le tiret casse la composition sur certains
     // telephones, il disparait de la forme composable.
     {
@@ -48,7 +48,12 @@ export const CONTACT: {
       href: "+212663412412",
       name: "Wassim Oumbarek",
     },
-    { label: "France", display: "+33 6 66 11 12 91", href: "+33666111291" },
+    {
+      label: "France",
+      display: "+33 6 66 11 12 91",
+      href: "+33666111291",
+      name: "Mehdi Sefraoui",
+    },
   ],
 };
 

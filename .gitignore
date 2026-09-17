@@ -7,3 +7,5 @@
 # git conserve chaque version binaire indefiniment, et ces fichiers ne sont
 # jamais servis par le site.
 brand-source/
+.vercel
+.env*
