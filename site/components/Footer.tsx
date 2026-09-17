@@ -79,6 +79,7 @@ export default function Footer({ dict, lang }: { dict: Dictionary; lang: Locale 
                 >
                   <span className="link-sweep">{phone.display}</span>
                 </a>
+                {phone.name && <p className="t-meta text-paper/45">{phone.name}</p>}
               </li>
             ))}
             <li className="t-body text-paper/45">{CONTACT.city}</li>

@@ -65,16 +65,20 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                 </a>
               </ContactLine>
 
-              {/* Les trois numeros sur trois lignes, chacun avec son pays :
-                  une liste sans repere oblige a dechiffrer l'indicatif. */}
+              {/* Un numero par ligne, chacun avec son pays : une liste sans
+                  repere oblige a dechiffrer l'indicatif. Quand le numero est
+                  nominatif, le nom passe sous le numero, aligne sur lui. */}
               <ContactLine label={pages.contact.phoneLabel}>
                 <ul className="space-y-2">
                   {CONTACT.phones.map((phone) => (
                     <li key={phone.href} className="flex items-baseline gap-3">
                       <span className="eyebrow w-[52px] shrink-0 text-paper/35">{phone.label}</span>
-                      <a href={`tel:${phone.href}`} className="group t-body nums hover:text-paper">
-                        <span className="link-sweep">{phone.display}</span>
-                      </a>
+                      <div>
+                        <a href={`tel:${phone.href}`} className="group t-body nums hover:text-paper">
+                          <span className="link-sweep">{phone.display}</span>
+                        </a>
+                        {phone.name && <p className="t-meta text-paper/50">{phone.name}</p>}
+                      </div>
                     </li>
                   ))}
                 </ul>

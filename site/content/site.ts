@@ -5,7 +5,24 @@
 // et aux liens canoniques. À changer au moment du déploiement.
 export const SITE_URL = "https://4lab.arrioph.com";
 
-export const CONTACT = {
+export type Phone = {
+  /** Pays, affiche dans la colonne etroite a gauche du numero. */
+  label: string;
+  display: string;
+  href: string;
+  /**
+   * Personne a joindre sur ce numero, quand il est nominatif. Affichee sous le
+   * numero et non a la place du pays : la colonne du pays ne fait que 52px, un
+   * nom complet n'y tiendrait pas.
+   */
+  name?: string;
+};
+
+export const CONTACT: {
+  email: string;
+  city: string;
+  phones: Phone[];
+} = {
   email: "thelab@arrioph.com",
   city: "Casablanca, MA et Paris, FR",
   /**
@@ -23,6 +40,14 @@ export const CONTACT = {
     // Maroc, un appel depuis l'etranger ne passerait pas. La forme composable
     // le remplace donc par l'indicatif pays.
     { label: "Maroc", display: "+212 6 69 86 68 31", href: "+212669866831" },
+    // Saisi +212 663-412412 : le tiret casse la composition sur certains
+    // telephones, il disparait de la forme composable.
+    {
+      label: "Maroc",
+      display: "+212 6 63 41 24 12",
+      href: "+212663412412",
+      name: "Wassim Oumbarek",
+    },
     { label: "France", display: "+33 6 66 11 12 91", href: "+33666111291" },
   ],
 };
